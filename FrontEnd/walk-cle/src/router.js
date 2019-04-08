@@ -28,3 +28,7 @@ export default new Router({
    
   ]
 })
+
+//router.before each 
+
+//requiresAuth

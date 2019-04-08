@@ -35,6 +35,10 @@ export default {
   font-weight: bold;
 }
 
+#nav a:link {
+  color: #6f263d;
+}
+
 #nav a:visited{
   color: #6f263d;
 }

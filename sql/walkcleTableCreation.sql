@@ -1,3 +1,16 @@
+drop table if exists users      cascade;
+
+CREATE TABLE users (
+username varchar(15) NOT NULL,
+password varchar NOT NULL,
+salt varchar NOT NULL,
+role varchar(15) NOT NULL,    -- constraint to user or admin
+image varchar,
+CONSTRAINT chk_role CHECK (role IN ('user','admin')),
+CONSTRAINT unique_user UNIQUE (username),
+CONSTRAINT pk_user_username PRIMARY KEY(username)
+);
+
 -- Password for this user is 'greatwall'
 INSERT INTO users ("username", "password", "salt", "role", "image") VALUES
 (

@@ -10,7 +10,11 @@
 
         <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
-      </div>
+        </div>
+        <div class="alert alert-success" role="alert" v-if="this.$route.query.registration">
+        Thank you for registering, please sign in.
+        </div>
+
 
 </div>
 </template>
@@ -65,6 +69,13 @@ export default {
 </script>
 
 <style>
+#login{
+    margin-left:auto;
+    margin-right: auto;
+    padding: 20px 50px 20px 50px;
+    width: 20%;
+    border-radius: 4px;
+}
 .btn {
     border: .5px solid lightgrey;
     border-radius: 10px;

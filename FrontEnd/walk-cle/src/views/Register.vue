@@ -52,6 +52,13 @@ export default {
 </script>
 
 <style>
+#register{
+    margin-left:auto;
+    margin-right: auto;
+    padding: 20px 50px 20px 50px;
+    width: 20%;
+    border-radius: 4px;
+}
 .btn {
     border: .5px solid lightgrey;
     border-radius: 10px;

@@ -26,6 +26,7 @@ export default {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: '. header nav';
+        border-radius: 4px;
 
     }
     .navList{

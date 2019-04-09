@@ -1,54 +1,72 @@
 <template>
 <div id="login">
     <h1>Login</h1>
-        <form @submit.prevent="login(this.user)">
-            <input type="text" name="username" v-model="user.username" placeholder="Username" />
-            <input type="password" name="password" v-model="user.password" placeholder="Password" />
-            <button type="submit" >Login</button>  <!-- v-on:click="login(this.user)" -->
+    
+        <form @submit.prevent="login">
+            <input type="text" name="username" v-model="user.username" placeholder="Username" required />
+            <input type="password" name="password" v-model="user.password" placeholder="Password" required />
+            <button type="submit" class = 'btn' >Login</button>  
         </form>
+
+        <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
+        Invalid username and password!
+      </div>
+
 </div>
 </template>
 
 <script>
+import auth from '@/auth';
+
 export default {
+    name: 'login',
+    components:{},
     data(){
-        let isAuthorized = false;
         return {
             user:{
-                username: "",
-                password: ""
+                username: '',
+                password: '',
             },
-        }
+            invalidCredentials: false,
+        };
     },
     methods: {
-        loginSuccess(response){
-            if(response.data.success){
-                this.isAuthorized = true;
-            }
-        },
-
-        login(){
-            console.log(this.user.username + this.user.password);
-            fetch(`${this.API_URL}/account/register`,{
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(this.user)
+        login() {
+            fetch(`${process.env.VUE_APP_REMOTE_API}/login`, {
+                method: 'POST',
+                headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.user),
             })
-            .then((response) => {
-                if(response.ok){
-                    // $emit isAuthorized === true  ??
-                    this.$router.push("/");
+                .then((response) => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    this.invalidCredentials = true;
                 }
-            })
-        }
+                })
+                .then((token) => {
+                if (token != undefined) {
+                    if (token.includes('"')) {
+                    token = token.replace(/"/g, '');
+                    }
+                    auth.saveToken(token);
+                    this.$router.push('/');
+                }
+                })
+                .catch((err) => console.error(err));
 
-        }
+        },
+    }
 }
 
 </script>
 
 <style>
-
+.btn {
+    border: .5px solid lightgrey;
+    border-radius: 10px;
+}
 </style>

@@ -1,11 +1,15 @@
 <template>
 <div id="register">
     <h1>Register</h1>
-    
-        <input type="text" name="username" v-model="newUser.username" placeholder="Username" />
-        <input type="password" name="password" v-model="newUser.password" placeholder="Password" />
-        <button type="button" v-on:click="register(this.newUser)">Register</button>
-
+    <form @submit.prevent="register">
+        <input type="text" name="username" v-model="user.username" placeholder="Username" required />
+        <input type="password" name="password" v-model="user.password" placeholder="Password" required />
+        <input type="password" name="password" v-model="user.confirmPassword" placeholder="Re-Enter Password" required />
+        <button type="submit" class = 'btn' >Register</button>
+    </form>
+    <div class="alert alert-danger" role="alert" v-if="registrationErrors">
+        There were problems registering this user.
+      </div>
 </div>
 </template>
 
@@ -13,25 +17,43 @@
 export default {
     data(){
         return {
-            //href : "http://localhost:8080/walkcle/"  <--- we need to create our java maven project
-            API_URL: "http://localhost:8080",
-
-            newUser:{
-                username: "",
-                password: ""
-            }
-        }
+            user:{
+                username: '',
+                password: '',
+                confirmPassword: '',
+                role: 'user',
+            },
+            registrationErrors: false,
+        };
     },
     methods: {
-        register(newUser){                                  // This will not be a fetch it will just be a POST because it is coming from a form not an API
-           const newUsername = newUser.username
-                    this.$router.push("/");
-        }
-           
+        register() {
+            fetch(`${process.env.VUE_APP_REMOTE_API}/register`, {
+                method: 'POST',
+                headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.user),
+            })
+                .then((response) => {
+                if (response.ok) {
+                    this.$router.push({ path: '/login', query: { registration: 'success' } });
+                } else {
+                    this.registrationErrors = true;
+                }
+                })
+
+                .then((err) => console.error(err));
+    
+        }, 
     }
 }
 </script>
 
 <style>
-
+.btn {
+    border: .5px solid lightgrey;
+    border-radius: 10px;
+}
 </style>

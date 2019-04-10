@@ -4,14 +4,46 @@
             <h1>WalkCLE</h1>
         </div>
         <ul class ="navList">
-            <li><router-link :to="{ name: 'Login' }">Login</router-link></li>
+            <li v-if="!isLogged()"><router-link :to="{ name: 'Login' }">Login</router-link></li>
+            <li v-if="isLogged()" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>
             <li><router-link :to="{ name: 'Register' }">Register</router-link></li>
+            <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
         </ul>
     </div>
 </template>
 
 <script>
+import { EventBus } from '@/event-bus.js';
+import auth from '@/auth';
 export default {
+
+    data(){
+        return{
+            showLogout: false
+        }
+    },
+    mounted(){
+        this.showLogout = this.isLogged()
+    },
+  
+    methods:{
+        isLogged(){
+            let token = auth.getToken();
+           
+           if (token !== null){
+               return true
+           }
+           else{
+               return false
+           }
+           EventBus.$on('i-got-clicked', showLogout => {
+               mounted()
+           });
+        },
+        logout(){
+             auth.destroyToken();
+        }
+    }
 
 }
 </script>

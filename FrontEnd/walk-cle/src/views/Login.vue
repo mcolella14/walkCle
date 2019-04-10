@@ -21,6 +21,7 @@
 
 <script>
 import auth from '@/auth';
+import { EventBus } from '@/event-bus.js';
 
 export default {
     name: 'login',
@@ -57,10 +58,13 @@ export default {
                     token = token.replace(/"/g, '');
                     }
                     auth.saveToken(token);
+                    EventBus.$emit('i-got-clicked')
                     this.$router.push('/');
+
                 }
                 })
                 .catch((err) => console.error(err));
+
 
         },
     }

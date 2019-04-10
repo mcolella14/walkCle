@@ -4,8 +4,8 @@
             <h1>WalkCLE</h1>
         </div>
         <ul class ="navList">
-            <li v-if="!isLogged()"><router-link :to="{ name: 'Login' }">Login</router-link></li>
-            <li v-if="isLogged()" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>
+            <li v-if="!showLogout"><router-link :to="{ name: 'Login' }">Login</router-link></li>
+            <li v-if="showLogout" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>
             <li><router-link :to="{ name: 'Register' }">Register</router-link></li>
             <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
         </ul>
@@ -17,15 +17,20 @@ import { EventBus } from '@/event-bus.js';
 import auth from '@/auth';
 export default {
 
+    
+
     data(){
         return{
             showLogout: false
         }
     },
     mounted(){
-        this.showLogout = this.isLogged()
+        
+        EventBus.$on('i-got-clicked', () =>{
+            this.showLogout = this.isLogged();
+        })
     },
-  
+    
     methods:{
         isLogged(){
             let token = auth.getToken();
@@ -36,12 +41,13 @@ export default {
            else{
                return false
            }
-           EventBus.$on('i-got-clicked', showLogout => {
-               mounted()
-           });
+           
+           
         },
+
         logout(){
              auth.destroyToken();
+             this.showLogout = this.isLogged();
         }
     }
 

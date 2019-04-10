@@ -1,4 +1,5 @@
 <template>
+<div id="nav">
     <div class="navBar">
         <div class="header">
             <h1>WalkCLE</h1>
@@ -8,6 +9,7 @@
             <li><router-link :to="{ name: 'Register' }">Register</router-link></li>
         </ul>
     </div>
+</div>
 </template>
 
 <script>
@@ -17,7 +19,21 @@ export default {
 </script>
 
 <style>
+    #nav {
+  padding: 30px;
+}
 
+#nav a {
+  font-weight: bold;
+}
+
+#nav a:visited {
+  color: #6f263d;
+}
+
+#nav a.router-link-exact-active {
+  color: #6f263d;
+}
     .header{
         grid-area: header;
     }

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
+//import GoogMap from '@/components/GoogMap.vue'
 
 Vue.use(Router)
 
@@ -24,7 +25,7 @@ export default new Router({
       path: '/register',
       name: 'Register',
       component: Register
-    }
-   
+    },
+
   ]
 })

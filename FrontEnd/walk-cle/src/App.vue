@@ -27,9 +27,22 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #6f263d;
-  background: white;
+  background-image: url('assets/cleveland-skyline-at-night-2x3-magnet.jpg');
+  background-color: aquamarine;
+  height: 100vh;
 }
 
+#nav a:link {
+  color: #6f263d;
+}
+
+#nav a:visited{
+  color: #6f263d;
+}
+
+#nav a.router-link-exact-active {
+  color: #6f263d;
+}
 
 input {
   display: block;

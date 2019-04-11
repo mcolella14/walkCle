@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="container">
     <div>
       <h2>Search locations and add a pin</h2>
       <label>
@@ -12,10 +12,10 @@
 
     </div>
     <br>
-    <gmap-map
+    <gmap-map id="map"
       :center="center"
       :zoom="11"
-      style="width:50%;  height: 500px;"
+      style=""
     >
       <gmap-marker
         :key="index"
@@ -88,6 +88,25 @@ export default {
 // This will allow any additional data returned from the automplete query to be used in this component 
 // or any child components, as needed.
 </script>
+<style>
+#container{
+  color: white;
+}
+ #map{
+  margin-left:auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: 20px;
+ width: 700px;
+ height: 500px;
+ 
+
+} 
+/* #container{
+  height: 190%;
+  width: 200%
+} */
+</style>
 
 
 

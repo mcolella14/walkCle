@@ -5,9 +5,10 @@
             <h1>WalkCLE</h1>
         </div>
         <ul class ="navList">
+            <li id="profile" v-if="showLogout"><router-link :to="{ name: 'Home' }">{{this.username}}</router-link></li>
             <li v-if="!showLogout"><router-link :to="{ name: 'Login' }">Login</router-link></li>
             <li v-if="showLogout" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>
-            <li><router-link :to="{ name: 'Register' }">Register</router-link></li>
+            <li v-if="!showLogout"><router-link :to="{ name: 'Register' }">Register</router-link></li>
             <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
         </ul>
     </div>
@@ -23,14 +24,18 @@ export default {
 
     data(){
         return{
-            showLogout: false
+            showLogout: false,
+            username: ''
         }
     },
     mounted(){
         
-        EventBus.$on('i-got-clicked', () =>{
+        EventBus.$on('i-got-clicked', username =>{
             this.showLogout = this.isLogged();
-        })
+            this.username = username;
+        });
+        
+
     },
     
     methods:{
@@ -57,8 +62,9 @@ export default {
 </script>
 
 <style>
-    #nav {
+#nav {
   padding: 30px;
+  color: white;
 }
 
 #nav a {
@@ -66,11 +72,11 @@ export default {
 }
 
 #nav a:visited {
-  color: #6f263d;
+  color: white;
 }
 
 #nav a.router-link-exact-active {
-  color: #6f263d;
+  color: white;
 }
     .header{
         grid-area: header;
@@ -93,4 +99,15 @@ export default {
         padding: 10px;
         text-decoration: none;
     }
+#profile a{
+    color: lime
+}
+
+#profile a:visited {
+  color: lime;
+}
+
+#profile a.router-link-exact-active {
+  color: lime;
+}
 </style>

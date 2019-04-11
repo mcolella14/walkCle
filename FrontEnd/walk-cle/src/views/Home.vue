@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <h2 v-for="location in locations" :key="location.name">{{location.name}}</h2>
+
     <goog-map/>
   </div>
 </template>
@@ -16,41 +18,39 @@ export default {
         
     }
   },
+  created(){
+    fetch(`${process.env.VUE_APP_REMOTE_API}/`, {
+      method: 'GET',
+      headers: {
+
+      }
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.locations = data;
+      })
+      .catch((err) => console.error(err));
+    
+  },
 
   components: {
     GoogMap
   },
   methods:{
-     getLocations() {
-            fetch(`${process.env.VUE_APP_REMOTE_API}/`, {
-                method: 'GET',
-                headers: {
-                Accept: 'application/json',
-                'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(this.user),
-            })
-                .then(response => response.json())
-                .then((response) => {
-                if (response.ok) {
-                    
-                    this.locations.push(body)
-                    this.$router.push({ path: '/'});
-                } else {
-                    this.registrationErrors = true;
-                }
-                })
-
-                .catch((err) => console.error(err));
+     
     
         }, 
   }
  
-}
 </script>
 
 <style>
-
+h2{
+  color: white;
+  text-shadow: 0 0 2px white;
+}
   
 </style>
 

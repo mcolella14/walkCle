@@ -8,9 +8,11 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
 
 import com.techelevator.authentication.PasswordHasher;
 
+@Component
 public class JdbcLocationDao implements LocationDao{
 	
 	private JdbcTemplate jdbcTemplate;
@@ -23,7 +25,7 @@ public class JdbcLocationDao implements LocationDao{
 	 @Override
 	    public List<Location> getAllLocations() {
 	        List<Location> locations = new ArrayList<Location>();
-	        String sqlSelectAllLocations = "SELECT *  FROM Locations";
+	        String sqlSelectAllLocations = "SELECT *  FROM location";
 	        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllLocations);
 
 	        while(results.next()) {

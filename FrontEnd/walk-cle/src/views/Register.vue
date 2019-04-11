@@ -58,6 +58,7 @@ export default {
     padding: 20px 50px 20px 50px;
     width: 20%;
     border-radius: 4px;
+    color: white;
 }
 .btn {
     border: .5px solid lightgrey;

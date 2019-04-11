@@ -1,0 +1,60 @@
+package com.techelevator.model;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
+
+import com.techelevator.authentication.PasswordHasher;
+
+public class JdbcLocationDao implements LocationDao{
+	
+	private JdbcTemplate jdbcTemplate;
+	
+	 @Autowired
+	    public JdbcLocationDao(DataSource dataSource) {
+	        this.jdbcTemplate = new JdbcTemplate(dataSource);
+	    }
+	 
+	 @Override
+	    public List<Location> getAllLocations() {
+	        List<Location> locations = new ArrayList<Location>();
+	        String sqlSelectAllLocations = "SELECT *  FROM Locations";
+	        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllLocations);
+
+	        while(results.next()) {
+	            Location location = mapResultToLocation(results);
+	            locations.add(location);
+	        }
+	       
+	        return locations;
+	    }
+	 
+	 private Location mapResultToLocation(SqlRowSet results) {
+	        Location location = new Location();
+	        location.setName(results.getString("location_name"));
+	        location.setArea(results.getString("area"));
+	        location.setCategory(results.getString("category"));
+	        location.setPlace_id(results.getString("place_id"));
+	        return location;
+	    }
+	 
+	 @Override
+	    public Location getLocationByName(String location) {
+	        String sqlSelectLocationByName = "SELECT * FROM location WHERE name = ?";
+	        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectLocationByName, location);
+
+	        if(results.next()) {
+	            return mapResultToLocation(results);
+	        } else {
+	            return null;
+	        }
+	    }
+	 
+	 
+
+}

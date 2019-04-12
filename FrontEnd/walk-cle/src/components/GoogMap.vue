@@ -18,10 +18,10 @@
       style=""
       ref="myMap"
     >
-      <gmap-marker
+     <gmap-marker
         :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
+        v-for="(m, index) in locations"
+        :position="{ lat: m.latitude, lng: m.longitude }"
         @click="center=m.position"
       ></gmap-marker>
     </gmap-map>
@@ -29,8 +29,9 @@
 </template>
 
 <script>
+
 import axios from 'axios';
-import * as VueGoogleMaps from "vue2-google-maps";
+import {gmapApi}  from "vue2-google-maps";
 
 export default {
 
@@ -51,7 +52,7 @@ export default {
   },
   mounted() {
 
-   // this.geolocate();
+   console.log(window.google);
   },
 
   methods: {
@@ -66,13 +67,17 @@ export default {
       console.log('after the axios get')
     
       this.locations.forEach((element) => {
+        
+
+
+
         let request = {
           placeId: element.place_id,
           fields:['name', 'rating,', 'formatted_phone_number', 'geometry']
         };
       console.log(new VueGoogleMaps.gmapApi)
-        let mappy = new VueGoogleMaps.gmapApi.maps.Map(document.getElementById('map'));
-        let service = new  VueGoogleMaps.gmap.maps.places.PlacesService();
+        //let mappy = new VueGoogleMaps.gmapApi.maps.Map(document.getElementById('map'));
+        let service = window.google.maps.places.PlacesService(this.$refs.myMap);
         service.getDetails(request, callback);
 
         function callback(place, status){
@@ -149,11 +154,16 @@ export default {
   margin-right: auto;
   margin-top: auto;
   margin-bottom: 20px;
- width: 700px;
- height: 500px;
+ width: 500px;
+ height: 350px;
+ opacity: 0.8;
  
-
 } 
+#map:hover{
+  opacity: 1;
+  width: 700px;
+  height: 500px;
+}
 /* #container{
   height: 190%;
   width: 200%

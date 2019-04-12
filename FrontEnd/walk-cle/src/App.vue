@@ -21,6 +21,7 @@ export default {
 
 <style>
 #app {
+  
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,7 +29,7 @@ export default {
  
   background-image: url('assets/cleveland-skyline-at-night-2x3-magnet.jpg');
   background-color: aquamarine;
-  height: 100%;
+  height: 1000px;
 }
 
 input {

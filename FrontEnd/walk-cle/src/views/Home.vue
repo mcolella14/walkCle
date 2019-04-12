@@ -1,13 +1,14 @@
 <template>
   <div class="home">
-    <!-- <h2 v-for="location in locations" :key="location.name">{{location.name}}</h2> -->
 
     <goog-map/>
+    <about id="about"/>
   </div>
 </template>
 
 <script>
 import GoogMap from "@/components/GoogMap.vue";
+import About from "@/components/About.vue";
 
 
 export default {
@@ -37,7 +38,9 @@ export default {
   },
 
   components: {
-    GoogMap
+    GoogMap,
+    About
+
   },
   methods:{
      
@@ -51,6 +54,16 @@ export default {
 h2{
   color: white;
   text-shadow: 0 0 2px white;
+}
+
+#about{
+  color: white;
+}
+
+.home{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
   
 </style>

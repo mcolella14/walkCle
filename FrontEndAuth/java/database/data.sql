@@ -6,11 +6,11 @@ INSERT INTO users (username, password, salt, role) VALUES
     'kidcasB0te7i0jK0fmRIGHSm0mYhdLTaiGkEAiEvLp7dAEHWnuT8n/5bd2V/mqjstQ198iImm1xCmEFu+BHyOz1Mf7vm4LILcrr17y7Ws40Xyx4FOCt8jD03G+jEafpuVJnPiDmaZQXJEpEfekGOvhKGOCtBnT5uatjKEuVWuDA=',
     'user'
 );
-BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS location;
-DROP TABLE IF EXISTS users_location;
+
+DROP TABLE IF EXISTS users cascade;
+DROP TABLE IF EXISTS location cascade;
+DROP TABLE IF EXISTS users_location cascade;
 
 CREATE TABLE location (
   location_name varchar PRIMARY KEY,
@@ -129,19 +129,19 @@ WHERE place_id = 'ChIJ2Ql60437MIgRajTzalRnRgI';
 
 UPDATE location
 SET lat = 41.4985, lng = -81.690302
-WHERE place_id = 'ChIJP3W_O4D6MIgRYxYqWtb7meI'
+WHERE place_id = 'ChIJP3W_O4D6MIgRYxYqWtb7meI';
 
 UPDATE location
 SET lat = 41.4987854, lng = -81.69023749999999
-WHERE place_id = 'ChIJXbkJPYD6MIgRbSBLp6BJa18'
+WHERE place_id = 'ChIJXbkJPYD6MIgRbSBLp6BJa18';
 
 UPDATE location
 SET lat = 41.4848992, lng = -81.70368569999999
-WHERE place_id = 'ChIJyZkvv23wMIgRWOFuFcRalQw'
+WHERE place_id = 'ChIJyZkvv23wMIgRWOFuFcRalQw';
 
 UPDATE location
 SET lat = 41.498585, lng = -81.6896055
-WHERE place_id = 'ChIJEVW8R4D6MIgRW5pk_EaSj5c'
+WHERE place_id = 'ChIJEVW8R4D6MIgRW5pk_EaSj5c';
 
 UPDATE location
 SET lat = 41.4843807, lng = -81.70451869999999
@@ -149,4 +149,4 @@ WHERE place_id = 'ChIJA-V2u23wMIgRe6rtMBxi8uQ';
 
 
 
-COMMIT TRANSACTION;
+

@@ -5,6 +5,7 @@
             <h1>WalkCLE</h1>
         </div>
         <ul class ="navList">
+            <!--<li id="addLocation" v-if="showLogout"><router-link :to="{ name: 'AddLocation' }">Add Location</router-link></li>-->
             <li id="profile" v-if="showLogout"><router-link :to="{ name: 'Home' }">{{this.username}}</router-link></li>
             <li v-if="!showLogout"><router-link :to="{ name: 'Login' }">Login</router-link></li>
             <li v-if="showLogout" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>

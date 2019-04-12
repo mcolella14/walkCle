@@ -1,5 +1,6 @@
 package com.techelevator.authentication;
 
+import com.techelevator.model.Location;
 import com.techelevator.model.User;
 
 public interface AuthProvider {
@@ -50,4 +51,7 @@ public interface AuthProvider {
      * @return true, if the user has one of the roles
      */
     boolean userHasRole(String[] roles);
+    
+	void addLocation(Location loc);
+
 }

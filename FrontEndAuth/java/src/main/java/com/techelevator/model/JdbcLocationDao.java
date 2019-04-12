@@ -23,6 +23,14 @@ public class JdbcLocationDao implements LocationDao{
 	    }
 	 
 	 @Override
+	public void addNewLocation(String location, String area, String category, String place_id, Double lat, Double lng) {
+		 
+		 String sqlInsert = " INSERT INTO location(name, area, category, place_id, lat, lng) VALUES(?, ?, ?, ?, ?, ?)";
+		 jdbcTemplate.update(sqlInsert);
+	 }
+
+	 
+	 @Override
 	    public List<Location> getAllLocations() {
 	        List<Location> locations = new ArrayList<Location>();
 	        String sqlSelectAllLocations = "SELECT *  FROM location";

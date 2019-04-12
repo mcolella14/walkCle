@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.techelevator.model.Location;
+import com.techelevator.model.LocationDao;
 import com.techelevator.model.User;
 import com.techelevator.model.UserDao;
 
@@ -18,6 +20,7 @@ public class RequestAuthProvider implements AuthProvider {
 
     private HttpServletRequest request;
     private UserDao dao;
+    private LocationDao locDao;
     public final static String USER_KEY = "appCurrentUser";
 
     @Autowired
@@ -70,6 +73,13 @@ public class RequestAuthProvider implements AuthProvider {
     @Override
     public void register(String username, String password, String role) {
         dao.saveUser(username, password, role);
+    }
+    
+    @Override
+    public void addLocation(Location loc)
+ {
+    	locDao.addNewLocation(loc.getName(), loc.getArea(), loc.getCategory(), loc.getPlace_id(), loc.getLatitude(), loc.getLongitude());
+
     }
 
     @Override

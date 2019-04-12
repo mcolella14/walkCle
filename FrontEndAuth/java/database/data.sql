@@ -90,6 +90,63 @@ ADD FOREIGN KEY (id) REFERENCES users(id);
 ALTER TABLE users_location
 ADD FOREIGN KEY (location_name) REFERENCES location(location_name);
 
+ALTER TABLE location
+ADD lat float,
+ADD lng float
+;
+
+UPDATE location
+SET lat = 41.49647969999999, lng = -81.6882129
+WHERE place_id = 'ChIJtZl8uoH6MIgRIJlSUVz--lM';
+
+UPDATE location
+SET lat = 41.496211, lng = -81.6852289
+WHERE place_id = 'ChIJ7fYQtob6MIgRhTPPwA213FI';
+
+UPDATE location
+SET lat = 41.5060535, lng = -81.6995481
+WHERE place_id = 'ChIJTbhI1IXwMIgR6YSqsVRS1cE';
+
+UPDATE location
+SET lat = 41.5085414, lng = -81.6953685
+WHERE place_id = 'ChIJHZLHDYPwMIgRXxZaKR6dG5c';
+
+UPDATE location
+SET lat = 41.511522, lng = -81.61287999999999
+WHERE place_id = 'ChIJITY1VYz7MIgRH4nF3v7V9Tg';
+
+UPDATE location
+SET lat = 41.5074416, lng = -81.6967337
+WHERE place_id = 'ChIJSaHMiYPwMIgRgphvNUOhoEQ';
+
+UPDATE location
+SET lat = 41.4687292, lng = -81.68739309999999
+WHERE place_id = 'ChIJbQVW7Kj6MIgRGb69WOQyj9M';
+
+UPDATE location
+SET lat = 41.5090411, lng = -81.6120703
+WHERE place_id = 'ChIJ2Ql60437MIgRajTzalRnRgI';
+
+UPDATE location
+SET lat = 41.4985, lng = -81.690302
+WHERE place_id = 'ChIJP3W_O4D6MIgRYxYqWtb7meI'
+
+UPDATE location
+SET lat = 41.4987854, lng = -81.69023749999999
+WHERE place_id = 'ChIJXbkJPYD6MIgRbSBLp6BJa18'
+
+UPDATE location
+SET lat = 41.4848992, lng = -81.70368569999999
+WHERE place_id = 'ChIJyZkvv23wMIgRWOFuFcRalQw'
+
+UPDATE location
+SET lat = 41.498585, lng = -81.6896055
+WHERE place_id = 'ChIJEVW8R4D6MIgRW5pk_EaSj5c'
+
+UPDATE location
+SET lat = 41.4843807, lng = -81.70451869999999
+WHERE place_id = 'ChIJA-V2u23wMIgRe6rtMBxi8uQ';
+
 
 
 COMMIT TRANSACTION;

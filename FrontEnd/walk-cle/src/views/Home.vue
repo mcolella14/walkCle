@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h2 v-for="location in locations" :key="location.name">{{location.name}}</h2>
+    <!-- <h2 v-for="location in locations" :key="location.name">{{location.name}}</h2> -->
 
     <goog-map/>
   </div>
@@ -22,7 +22,6 @@ export default {
     fetch(`${process.env.VUE_APP_REMOTE_API}/`, {
       method: 'GET',
       headers: {
-
       }
     })
       .then((response) => {
@@ -33,6 +32,8 @@ export default {
       })
       .catch((err) => console.error(err));
     
+    
+
   },
 
   components: {

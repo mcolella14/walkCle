@@ -5,7 +5,6 @@ import * as VueGoogleMaps from "vue2-google-maps";
 
 Vue.config.productionTip = false
 
-
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyAJC3qMxUv2ECCVn76BOxsGi1n5vhu072w",

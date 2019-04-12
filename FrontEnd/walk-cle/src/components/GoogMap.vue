@@ -16,6 +16,7 @@
       :center="center"
       :zoom="11"
       style=""
+      ref="myMap"
     >
       <gmap-marker
         :key="index"
@@ -28,24 +29,73 @@
 </template>
 
 <script>
+import axios from 'axios';
+import * as VueGoogleMaps from "vue2-google-maps";
+
 export default {
+
   name: "Googmap",
   data() {
     return {
-      
       center: { lat: 41.5038, lng: -81.6387 },
       markers: [],
       places: [],
-      currentPlace: null
+      currentPlace: null,
+      locations:[],
     };
   },
+  created() {
 
+    this.initMarkers();
+    
+  },
   mounted() {
-    this.geolocate();
+
+   // this.geolocate();
   },
 
   methods: {
     // receives a place object via the autocomplete component
+    initMarkers(){
+      console.log('hello there');
+    axios.get(process.env.VUE_APP_REMOTE_API + '/').then(response =>{
+      this.locations = response.data;
+      console.log(this.locations);
+    })
+    .then(response => {
+      console.log('after the axios get')
+    
+      this.locations.forEach((element) => {
+        let request = {
+          placeId: element.place_id,
+          fields:['name', 'rating,', 'formatted_phone_number', 'geometry']
+        };
+      console.log(new VueGoogleMaps.gmapApi)
+        let mappy = new VueGoogleMaps.gmapApi.maps.Map(document.getElementById('map'));
+        let service = new  VueGoogleMaps.gmap.maps.places.PlacesService();
+        service.getDetails(request, callback);
+
+        function callback(place, status){
+          console.log('before');
+          console.log(this.markers);
+        if(status == google.maps.places.PlacesServiceStatus.OK){
+            const marker = {
+            lat: place.geometry.location.lat(),
+            lng: place.geometry.location.lng()
+          };
+          this.markers.push({ position: marker });
+          console.log(this.markers)
+          this.places.push(place);
+          this.center = marker;
+          this.currentPlace = null;
+          
+        }
+        console.log('after');
+      console.log(this.markers);
+        }
+      })
+    })
+    },
     setPlace(place) {
       this.currentPlace = place;
     },
@@ -61,19 +111,21 @@ export default {
         this.currentPlace = null;
       }
     },
-    geolocate() {
-      console.log('inside geolocate');
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        };
-      },
-      (error) => {
-        console.log(error);
-      }
-      );
-    }
+    
+
+    // geolocate() {
+    //   console.log('inside geolocate');
+    //   navigator.geolocation.getCurrentPosition((position) => {
+    //     this.center = {
+    //       lat: position.coords.latitude,
+    //       lng: position.coords.longitude
+    //     };
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   }
+    //   );
+    // }
   }
 };
 // We’re creating a gmap-autocomplete and a gmap-map (with children gmap-markers). Initially, 

@@ -19,27 +19,35 @@
         :key="index"
         v-for="(m, index) in locations"
         :position="{ lat: m.latitude, lng: m.longitude }"
-       @click="center={ lat: m.latitude, lng: m.longitude }"
-      ></gmap-marker>
+        @click="openWindow(m)"
+       >
+       </gmap-marker>
+       
+      <gmap-info-window @click="showInfo" :position="infoWindow" :opened="windowOpen" @closeclick="closeWindow()"> 
+          <div id="info"><div id="infoBoxName">{{this.infoName}}</div><br>Click for more info</div>
+        </gmap-info-window>
     </gmap-map>
+
   </div>
 </template>
 
 <script>
 
 import axios from 'axios';
-import {gmapApi}  from "vue2-google-maps";
 
 export default {
 
   name: "Googmap",
   data() {
     return {
+      infoWindow:{},
+      windowOpen: false,
       center: { lat: 41.5038, lng: -81.6387 },
       markers: [],
       places: [],
       currentPlace: null,
       locations:[],
+      infoName: ''
     };
   },
   created() {
@@ -49,24 +57,30 @@ export default {
   },
   mounted() {
 
-   console.log(window.google);
   },
 
   methods: {
+    showInfo(){
+
+    },
+    openWindow(m){
+      this.infoWindow = { lat: m.latitude, lng: m.longitude }
+      this.windowOpen = true;
+      this.infoName = m.name;
+      
+    },
+
+    closeWindow(){
+      this.windowOpen = false;
+    },
+  
     centerMarker(m){
       this.center = m.position;
 
     },
     initMarkers(){
-      console.log('hello there');
     axios.get(process.env.VUE_APP_REMOTE_API + '/').then(response =>{
       this.locations = response.data;
-      console.log(this.locations);
-    })
-    .then(response => {
-      console.log('after the axios get')
-    
-     
     })
     },
     setPlace(place) {
@@ -112,22 +126,26 @@ export default {
   margin-right: auto;
   margin-top: auto;
   margin-bottom: 20px;
- width: 500px;
- height: 350px;
+ width: 700px;
+ height: 500px;
  opacity: 0.8;
- transition: 5s;
+ /*transition: 5s;*/
  
 } 
 #map:hover{
-  opacity: 1;
+  /* opacity: 1;
   width: 700px;
   height: 500px;
-  transition: 0.5s;
+  transition: 0.5s; */
 }
-/* #container{
-  height: 190%;
-  width: 200%
-} */
+#info{
+  color: black;
+}
+
+#infoBoxName{
+  font-weight: bold;
+  font-size: 150%;
+}
 </style>
 
 

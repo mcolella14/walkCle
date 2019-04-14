@@ -105,44 +105,97 @@ SET description = 'Rocket Mortgage FieldHouse is a multi-purpose arena in downto
 WHERE place_id = 'ChIJtZl8uoH6MIgRIJlSUVz--lM';
 
 UPDATE location
+SET lat = 41.49647969999999, lng = -81.6882129
+WHERE place_id = 'ChIJtZl8uoH6MIgRIJlSUVz--lM';
+
+UPDATE location
 SET description = 'Progressive Field is a baseball park located in the downtown area of Cleveland, Ohio, United States. 
                         It is the home field of the Cleveland Indians of Major League Baseball and, together with Rocket Morgage Field House, 
                         is part of the Gateway Sports and Entertainment Complex.'
                         
 WHERE place_id = 'ChIJ7fYQtob6MIgRhTPPwA213FI';
 
-
-UPDATE location
-SET lat = 41.49647969999999, lng = -81.6882129
-WHERE place_id = 'ChIJtZl8uoH6MIgRIJlSUVz--lM';
-
 UPDATE location
 SET lat = 41.496211, lng = -81.6852289
 WHERE place_id = 'ChIJ7fYQtob6MIgRhTPPwA213FI';
+
+UPDATE location
+SET description = 'FirstEnergy Stadium is a multi-purpose stadium in Cleveland, Ohio, United States, primarily for American football. 
+                        It is the home field of the Cleveland Browns of the National Football League, and serves as a venue for other 
+                        events such as college and high school football, soccer, and concerts.'
+                        
+WHERE place_id = 'ChIJTbhI1IXwMIgR6YSqsVRS1cE';
 
 UPDATE location
 SET lat = 41.5060535, lng = -81.6995481
 WHERE place_id = 'ChIJTbhI1IXwMIgR6YSqsVRS1cE';
 
 UPDATE location
+SET description = 'The Rock and Roll Hall of Fame, located on the shore of Lake Erie in downtown Cleveland, Ohio, recognizes and archives the history of the 
+                        best-known and most influential artists, producers, engineers, and other notable figures who have had some major influence 
+                        on the development of rock and roll.'
+                        
+WHERE place_id = 'ChIJHZLHDYPwMIgRXxZaKR6dG5c'; 
+
+UPDATE location
 SET lat = 41.5085414, lng = -81.6953685
 WHERE place_id = 'ChIJHZLHDYPwMIgRXxZaKR6dG5c';
+
+UPDATE location
+SET description = 'The Cleveland Museum of Natural History is a natural history museum located approximately five miles east of downtown Cleveland, Ohio 
+                        in University Circle, a 550-acre concentration of educational, cultural and medical institutions.'
+
+WHERE place_id = 'ChIJITY1VYz7MIgRH4nF3v7V9Tg';
 
 UPDATE location
 SET lat = 41.511522, lng = -81.61287999999999
 WHERE place_id = 'ChIJITY1VYz7MIgRH4nF3v7V9Tg';
 
 UPDATE location
+SET description = 'The Great Lakes Science Center is a museum and educational facility in downtown Cleveland, Ohio, United States. 
+                        Many of the exhibits document the features of the natural environment in the Great Lakes region of the United States.'
+
+WHERE place_id = 'ChIJSaHMiYPwMIgRgphvNUOhoEQ';
+
+UPDATE location
 SET lat = 41.5074416, lng = -81.6967337
 WHERE place_id = 'ChIJSaHMiYPwMIgRgphvNUOhoEQ';
+
+UPDATE location
+SET description = 'A Christmas Story House is an attraction and museum in Cleveland, Ohio''s Tremont neighborhood. The 19th-century Victorian, 
+                        which was used in the exterior and some interior scenes of Ralphie Parker''s house in the 1983 film A Christmas Story, 
+                        was purchased by a private developer in 2004 and has been restored and renovated to appear as it did both inside and outside 
+                        in the film. The museum is part of a complex of four buildings devoted to the film, and is open to the public year-round.'
+
+WHERE place_id = 'ChIJbQVW7Kj6MIgRGb69WOQyj9M';
 
 UPDATE location
 SET lat = 41.4687292, lng = -81.68739309999999
 WHERE place_id = 'ChIJbQVW7Kj6MIgRGb69WOQyj9M';
 
 UPDATE location
+SET description = 'The Cleveland Museum of Art is an art museum in Cleveland, Ohio, located in the Wade Park District, 
+                        in the University Circle neighborhood on the city''s east side. Internationally renowned for its substantial holdings of 
+                        Asian and Egyptian art, the museum houses a diverse permanent collection of more than 45,000 works of art from around the world. 
+                        The museum provides general admission free to the public. With a $755 million endowment, it is the fourth-wealthiest art museum 
+                        in the United States. With about 770,000 visitors annually (2018), it is one of the most visited art museums in the world.'
+
+WHERE place_id = 'ChIJ2Ql60437MIgRajTzalRnRgI';
+
+UPDATE location
 SET lat = 41.5090411, lng = -81.6120703
 WHERE place_id = 'ChIJ2Ql60437MIgRajTzalRnRgI';
+
+UPDATE location 
+SET description = 'Flannery''s Irish Pub has been a Cleveland landmark since 1997. Renowned for our perfect pint, great comfort food, and the 
+                        friendliest staff in Cleveland, Flannery''s is called home by all that visit. Flannery''s Irish Pub is a great place to go to 
+                        lunch, meet friends after work, to shoot a game of pool, or to fuel up before a Cav’s game. Located directly across from 
+                        the Rocket Morgage Field House on the corner of 4th and Prospect, in the heart of the Gateway Neighborhood, and are the only Irish 
+                        Pub in Cleveland that pours a perfect 20 oz. pint! Flannery''s Irish Pub features over 15 imported draft beers, 
+                        traditional Irish recipes as well as great selection of American comfort foods in portions that will not leave you hungry. 
+                        One bite of Cleveland''s best Fish and Chips or our signature Bacon Wrapped Meatloaf will have you hooked and craving more!'
+
+WHERE place_id = 'ChIJP3W_O4D6MIgRYxYqWtb7meI';
 
 UPDATE location
 SET lat = 41.4985, lng = -81.690302

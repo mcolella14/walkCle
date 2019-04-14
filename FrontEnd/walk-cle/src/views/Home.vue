@@ -3,13 +3,14 @@
 
     <goog-map id="map"/>
     <about id="about"/>
+    <search id="search"/>
   </div>
 </template>
 
 <script>
 import GoogMap from "@/components/GoogMap.vue";
 import About from "@/components/About.vue";
-
+import Search from "@/components/Search.vue";
 
 export default {
 
@@ -39,7 +40,8 @@ export default {
 
   components: {
     GoogMap,
-    About
+    About,
+    Search
 
   },
   methods:{

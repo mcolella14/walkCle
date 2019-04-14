@@ -1,14 +1,6 @@
 <template>
   <div id="container">
-    <div>
-      <h2>Search locations and add a pin</h2>
-      <label>
-       
-      </label>
-      <br/>
-
-    </div>
-    <br>
+   <search v-bind:locations = "locations"/>
     <gmap-map id="map"
       :center="center"
       :zoom="11"
@@ -35,7 +27,7 @@
 
 import axios from 'axios';
 import { EventBus } from '@/event-bus.js';
-
+import Search from '@/components/Search.vue';
 export default {
 
   name: "Googmap",
@@ -50,6 +42,9 @@ export default {
       locations:[],
       infoName: ''
     };
+  },
+  components: {
+    Search
   },
   created() {
 

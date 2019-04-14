@@ -52,6 +52,7 @@ public class JdbcLocationDao implements LocationDao{
 	        location.setPlace_id(results.getString("place_id"));
 	        location.setLatitude(results.getDouble("lat"));
 	        location.setLongitude(results.getDouble("lng"));
+	        location.setDescription(results.getString("description"));
 	        return location;
 	    }
 	 

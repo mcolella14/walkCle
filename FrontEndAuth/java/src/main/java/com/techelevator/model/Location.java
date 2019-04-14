@@ -8,7 +8,14 @@ public class Location {
 	private String place_id;
 	private double latitude;
 	private double longitude;
+	private String description;
 	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public double getLatitude() {
 		return latitude;
 	}

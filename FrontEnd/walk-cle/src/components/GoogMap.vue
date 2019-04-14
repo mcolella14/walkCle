@@ -34,6 +34,7 @@
 <script>
 
 import axios from 'axios';
+import { EventBus } from '@/event-bus.js';
 
 export default {
 
@@ -41,6 +42,7 @@ export default {
   data() {
     return {
       infoWindow:{},
+      selectedPlace: {},
       windowOpen: false,
       center: { lat: 41.5038, lng: -81.6387 },
       markers: [],
@@ -61,12 +63,14 @@ export default {
 
   methods: {
     showInfo(){
+      EventBus.$emit('display-info', this.selectedPlace)
 
     },
     openWindow(m){
       this.infoWindow = { lat: m.latitude, lng: m.longitude }
       this.windowOpen = true;
       this.infoName = m.name;
+      this.selectedPlace = m;
       
     },
 

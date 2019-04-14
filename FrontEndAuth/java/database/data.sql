@@ -92,8 +92,25 @@ ADD FOREIGN KEY (location_name) REFERENCES location(location_name);
 
 ALTER TABLE location
 ADD lat float,
-ADD lng float
+ADD lng float,
+ADD description varchar
 ;
+
+UPDATE location
+SET description = 'Rocket Mortgage FieldHouse is a multi-purpose arena in downtown Cleveland, Ohio, United States. 
+                        The building is the home of the Cleveland Cavaliers of the National Basketball Association, 
+                        the Cleveland Monsters of the American Hockey League, 
+                        and the Cleveland Gladiators of the Arena Football League.'
+                        
+WHERE place_id = 'ChIJtZl8uoH6MIgRIJlSUVz--lM';
+
+UPDATE location
+SET description = 'Progressive Field is a baseball park located in the downtown area of Cleveland, Ohio, United States. 
+                        It is the home field of the Cleveland Indians of Major League Baseball and, together with Rocket Morgage Field House, 
+                        is part of the Gateway Sports and Entertainment Complex.'
+                        
+WHERE place_id = 'ChIJ7fYQtob6MIgRhTPPwA213FI';
+
 
 UPDATE location
 SET lat = 41.49647969999999, lng = -81.6882129

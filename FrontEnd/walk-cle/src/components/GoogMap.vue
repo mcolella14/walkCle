@@ -42,7 +42,6 @@ export default {
   data() {
     return {
       infoWindow:{},
-      selectedPlace: {},
       windowOpen: false,
       center: { lat: 41.5038, lng: -81.6387 },
       markers: [],
@@ -63,7 +62,7 @@ export default {
 
   methods: {
     showInfo(){
-      EventBus.$emit('display-info', this.selectedPlace)
+      
 
     },
     openWindow(m){
@@ -71,6 +70,7 @@ export default {
       this.windowOpen = true;
       this.infoName = m.name;
       this.selectedPlace = m;
+      EventBus.$emit('display-info', m)
       
     },
 
@@ -123,9 +123,9 @@ export default {
 </script>
 <style>
 #container{
-  color: white;
 }
  #map{
+  color: white;
   margin-left:auto;
   margin-right: auto;
   margin-top: auto;

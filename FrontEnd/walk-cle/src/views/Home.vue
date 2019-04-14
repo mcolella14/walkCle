@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div id="home">
 
-    <goog-map/>
+    <goog-map id="map"/>
     <about id="about"/>
   </div>
 </template>
@@ -52,18 +52,23 @@ export default {
 
 <style>
 h2{
-  color: white;
   text-shadow: 0 0 2px white;
 }
 
 #about{
-  color: white;
+  justify-self: flex-end;
+  margin: 0 0 0 10px;
 }
 
-.home{
+#map{
+  justify-self: flex-start;
+  margin: 0 10px 0 0;
+}
+
+#home{
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-end;
+  margin: 0 5% 0 5%;
 }
   
 </style>

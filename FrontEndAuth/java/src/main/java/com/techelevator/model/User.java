@@ -1,5 +1,8 @@
 package com.techelevator.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.constraints.AssertTrue;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -8,7 +11,18 @@ import org.hibernate.validator.constraints.NotBlank;
  * User
  */
 public class User {
-    @NotBlank(message="Username is required")
+	
+	private List<Location> checkedInLocations = new ArrayList<Location>();
+
+
+	/**
+	 * @param passwordMatching the passwordMatching to set
+	 */
+	public void setPasswordMatching(boolean passwordMatching) {
+		this.passwordMatching = passwordMatching;
+	}
+
+	@NotBlank(message="Username is required")
     private String username;
 
     @NotBlank(message="Role is required")
@@ -85,4 +99,18 @@ public class User {
     public void setConfirmPassword(String confirmPassword) {
         this.confirmPassword = confirmPassword;
     }
+	
+    /**
+	 * @return the checkedInLocations
+	 */
+	public List<Location> getCheckedInLocations() {
+		return checkedInLocations;
+	}
+
+	/**
+	 * @param checkedInLocations the checkedInLocations to set
+	 */
+	public void setCheckedInLocations(List<Location> checkedInLocations) {
+		this.checkedInLocations = checkedInLocations;
+	}
 }

@@ -113,6 +113,11 @@ public class JdbcUserDao implements UserDao {
 
         return users;
     }
+    
+    public List<Location> getCheckedInLocations(){
+    	String sqlGetAllCheckedInLocations = "SELECT checked_in_loc FROM user u JOIN user_location ul ON u.id = ul.id JOIN location l ON ul.name = l.name WHERE id = ?";
+    	return null;
+    }
 
     private User mapResultToUser(SqlRowSet results) {
         User user = new User();

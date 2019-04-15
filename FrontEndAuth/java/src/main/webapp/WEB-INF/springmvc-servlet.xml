@@ -37,6 +37,8 @@
 						<value>/register</value>
 						<value>/</value>
 						<value>/newLocation</value>
+						<value>/searchArea</value>
+						
 						
 					</list>
 				</property>

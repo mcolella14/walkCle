@@ -60,16 +60,19 @@ h2{
 #about{
   justify-self: flex-end;
   margin: 0 0 0 10px;
+
 }
 
 #map{
+
   justify-self: flex-start;
   margin: 0 10px 0 0;
+
 }
 
 #home{
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   margin: 0 5% 0 5%;
 }
   

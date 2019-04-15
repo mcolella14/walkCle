@@ -1,7 +1,11 @@
 <template>
   <div id="container">
-   <search v-bind:locations = "locations"/>
+  <div>
+   <search v-bind:area = "area" v-bind:locations = "locations"/>
+   </div>
+   <div>
     <gmap-map id="map"
+
       :center="center"
       :zoom="11"
       style=""
@@ -9,16 +13,17 @@
     >
      <gmap-marker
         :key="index"
-        v-for="(m, index) in locations"
+        v-for="(m, index) in filteredLocations"
         :position="{ lat: m.latitude, lng: m.longitude }"
         @click="openWindow(m)"
        >
        </gmap-marker>
        
       <gmap-info-window @click="showInfo" :position="infoWindow" :opened="windowOpen" @closeclick="closeWindow()"> 
-          <div id="info"><div id="infoBoxName">{{this.infoName}}</div><br>Click for more info</div>
+          <div id="info"><div id="infoBoxName">{{this.infoName}}</div></div>
         </gmap-info-window>
     </gmap-map>
+    </div>
 
   </div>
 </template>
@@ -40,19 +45,36 @@ export default {
       places: [],
       currentPlace: null,
       locations:[],
-      infoName: ''
+      infoName: '',
+      area: ''
     };
   },
   components: {
     Search
   },
-  created() {
+  computed:{
+    filteredLocations : function(){
+      let result = this.locations.filter(location => {
+      console.log(this.area)
+      console.log(location.area)
+      console.log(this.area.includes(location.area))
+        return location.area.includes(this.area);
+      });
 
+      return result;
+   
+    }
+  },
+  created() {
+    
     this.initMarkers();
     
   },
   mounted() {
-
+     EventBus.$on('filter', area =>{
+            console.log(area)
+            this.area = area
+        });
   },
 
   methods: {
@@ -118,6 +140,8 @@ export default {
 </script>
 <style>
 #container{
+  display:flex;
+  justify-content: space-evenly;
 }
  #map{
   color: white;

@@ -23,7 +23,8 @@
   <div id="side-menu" class="side-nav">
     <a href="#" class="btn-close" v-on:click="closeSlideMenu()">&times;</a>
     <router-link :to="{ name: 'Home' }">Home</router-link>
-    <a href="#">Regions</a>
+    <a href="#" v-on:click="description">Regions</a>
+
     <a href="#">Landmarks</a>
     <a href="#">Sports</a>
     <a href="#">Entertainment</a>
@@ -59,6 +60,10 @@ export default {
     },
 
      methods:{
+        description: function(event){
+            alert("this is an alert")
+        },
+
         isLogged(){
             let token = auth.getToken();
            

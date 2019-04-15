@@ -33,6 +33,7 @@
 import axios from 'axios';
 import { EventBus } from '@/event-bus.js';
 import Search from '@/components/Search.vue';
+import Modal from '@melmacaluso/vue-modal';
 export default {
 
   name: "Googmap",

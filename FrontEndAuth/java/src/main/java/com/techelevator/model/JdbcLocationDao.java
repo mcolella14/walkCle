@@ -68,6 +68,42 @@ public class JdbcLocationDao implements LocationDao{
 	        }
 	    }
 	 
-	 
+	 	public List<Location> getFilteredAreas(String area) {
+	        List<Location> locations = new ArrayList<Location>();
+	        String sqlSelectFilteredAreas = "SELECT * FROM location WHERE area = ?";
+	        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectFilteredAreas, area);
 
+	        while(results.next()) {
+	            Location location = mapResultToLocation(results);
+	            locations.add(location);
+	        }
+	       
+	        return locations;
+	    }
+	 	
+	 	public List<Location> getFilteredCategory(String category) {
+	        List<Location> locations = new ArrayList<Location>();
+	        String sqlSelectFilteredCategory = "SELECT * FROM location WHERE category = ?";
+	        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectFilteredCategory, category);
+
+	        while(results.next()) {
+	            Location location = mapResultToLocation(results);
+	            locations.add(location);
+	        }
+	       
+	        return locations;
+	    }
+	 
+	 	public List<Location> getFilteredAreaAndCategory(String area, String category) {
+	        List<Location> locations = new ArrayList<Location>();
+	        String sqlSelectFilteredAreaAndCategory = "SELECT * FROM location WHERE area = ? and category = ?";
+	        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectFilteredAreaAndCategory, area, category);
+
+	        while(results.next()) {
+	            Location location = mapResultToLocation(results);
+	            locations.add(location);
+	        }
+	       
+	        return locations;
+	    }
 }

@@ -12,6 +12,7 @@
             <li v-if="!showLogout"><router-link :to="{ name: 'Register' }">Register</router-link></li>
             <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
         </ul>
+        <sliding-nav id="silde-nav"/>
     </div>
 </div>
 </template>
@@ -19,10 +20,11 @@
 <script>
 import { EventBus } from '@/event-bus.js';
 import auth from '@/auth';
+import SlidingNav from '@/components/SlidingNav'
 export default {
-
-    
-
+    components:{
+        SlidingNav
+    },
     data(){
         return{
             showLogout: false,
@@ -34,7 +36,7 @@ export default {
         EventBus.$on('i-got-clicked', username =>{
             this.showLogout = this.isLogged();
             this.username = username;
-        });
+        })
         
 
     },
@@ -56,6 +58,7 @@ export default {
         logout(){
              auth.destroyToken();
              this.showLogout = this.isLogged();
+             EventBus.$emit('logout');
         }
     }
 
@@ -72,12 +75,16 @@ export default {
   font-weight: bold;
 }
 
-#nav a:visited {
-  color: white;
+.navList a:visited {
+ color: white;
+}
+
+#slide-nav a:visited{
+    color: black;
 }
 
 #nav a.router-link-exact-active {
-  color: white;
+  color: inherit;
 }
     .header{
         grid-area: header;
@@ -86,7 +93,7 @@ export default {
     .navBar{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        grid-template-areas: '. header nav';
+        grid-template-areas: 'nav header slide';
         border-radius: 4px;
 
     }
@@ -94,7 +101,7 @@ export default {
         grid-area: nav;
         list-style: none;
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-evenly;
     }
     .navList li a{
         padding: 10px;

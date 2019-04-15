@@ -1,9 +1,9 @@
 <template>
   <div id="container">
-  <div>
-   <search v-bind:area = "area" v-bind:locations = "locations"/>
-   </div>
-   <div>
+    <h2 class="search" v-if="!isLogged">Log in to filter locations by area!</h2>
+   <search class ="search" v-if="isLogged" v-bind:area = "area" v-bind:locations = "locations"/>
+   
+   
     <gmap-map id="map"
 
       :center="center"
@@ -23,7 +23,7 @@
           <div id="info"><div id="infoBoxName">{{this.infoName}}</div></div>
         </gmap-info-window>
     </gmap-map>
-    </div>
+    
 
   </div>
 </template>
@@ -37,6 +37,7 @@ import Modal from '@melmacaluso/vue-modal';
 export default {
 
   name: "Googmap",
+  props: ['isLogged'],
   data() {
     return {
       infoWindow:{},
@@ -47,7 +48,7 @@ export default {
       currentPlace: null,
       locations:[],
       infoName: '',
-      area: ''
+      area: '',
     };
   },
   components: {
@@ -56,9 +57,6 @@ export default {
   computed:{
     filteredLocations : function(){
       let result = this.locations.filter(location => {
-      console.log(this.area)
-      console.log(location.area)
-      console.log(this.area.includes(location.area))
         return location.area.includes(this.area);
       });
 
@@ -75,7 +73,9 @@ export default {
      EventBus.$on('filter', area =>{
             console.log(area)
             this.area = area
-        });
+        })
+       
+        
   },
 
   methods: {
@@ -140,10 +140,13 @@ export default {
 
 </script>
 <style>
-#container{
-  display:flex;
-  justify-content: space-evenly;
+.search{
+  width: 40%;
+  text-align: center;
+  padding: 10px;
+  justify-content: flex-end;
 }
+
  #map{
   color: white;
   margin-left:auto;

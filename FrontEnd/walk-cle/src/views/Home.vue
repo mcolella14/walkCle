@@ -1,9 +1,9 @@
 <template>
   <div id="home">
 
-    <goog-map id="map"/>
+    <goog-map v-bind:isLogged="isLogged" id="map"/>
     <about id="about"/>
-    <search id="search"/>
+   <!-- <search id="search"/>-->
   </div>
 </template>
 
@@ -13,6 +13,8 @@ import About from "@/components/About.vue";
 import Search from "@/components/Search.vue";
 
 export default {
+
+  props: ['isLogged'],
 
   data(){
     return{
@@ -53,9 +55,6 @@ export default {
 </script>
 
 <style>
-h2{
-  text-shadow: 0 0 2px white;
-}
 
 #about{
   justify-self: flex-end;
@@ -64,14 +63,18 @@ h2{
 }
 
 #map{
-
-  justify-self: flex-start;
+  display:flex;
+  
+  flex-wrap: nowrap;
+  justify-self: center;
   margin: 0 10px 0 0;
+  width: 100%;
 
 }
 
 #home{
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   margin: 0 5% 0 5%;
 }

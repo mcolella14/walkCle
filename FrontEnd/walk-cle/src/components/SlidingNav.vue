@@ -1,5 +1,5 @@
 <template>
-<div>
+<div id="slide">
   <nav class="navbar">
     <span class="open-slide">
       <a href="#" v-on:click="openSlideMenu()">
@@ -11,27 +11,27 @@
       </a>
     </span>
 
-    <ul class="navbar-nav">
+    <!--<ul class="navbar-nav">
       <li id="profile" v-if="showLogout"><router-link :to="{ name: 'Home' }">{{this.username}}</router-link></li>
             <li v-if="!showLogout"><router-link :to="{ name: 'Login' }">Login</router-link></li>
             <li v-if="showLogout" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>
             <li v-if="!showLogout"><router-link :to="{ name: 'Register' }">Register</router-link></li>
             <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
-    </ul>
+    </ul>-->
   </nav>
 
   <div id="side-menu" class="side-nav">
     <a href="#" class="btn-close" v-on:click="closeSlideMenu()">&times;</a>
-    <router-link :to="{ name: 'Home' }">Home</router-link>
-    <a href="#" v-on:click="description">Regions</a>
+    <router-link id="router" :to="{ name: 'Home' }">Home</router-link>
+    <a class="link" href="#" v-on:click="description">Regions</a>
 
-    <a href="#">Landmarks</a>
-    <a href="#">Sports</a>
-    <a href="#">Entertainment</a>
-    <a href="#">Night Life</a>
-    <a href="#">Eats</a>
-    <a href="#">Parks</a>
-    <a href="#">Museums</a>
+    <a class="link" href="#">Landmarks</a>
+    <a class="link" href="#">Sports</a>
+    <a class="link" href="#">Entertainment</a>
+    <a class="link" href="#">Night Life</a>
+    <a class="link" href="#">Eats</a>
+    <a class="link" href="#">Parks</a>
+    <a class="link" href="#">Museums</a>
   </div>
 </div>
 
@@ -100,6 +100,20 @@ export default {
 </script>
 
 <style>
+#slide{
+  color: black;
+}
+
+#link a:visited{
+  color: black
+}
+
+#link{
+  color:#000;
+}
+#router {
+  color: black !important;
+}
 body{
   font-family:"Arial", Serif;
   background-color:#f4f4f4;
@@ -162,6 +176,9 @@ body{
   background-color:darkred;
 }
 
+.side-nav a:visited{
+  color:#000;
+}
 .side-nav .btn-close{
   position:absolute;
   top:0;

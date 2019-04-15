@@ -1,16 +1,13 @@
 <template>
     <div id="search">
-    <div class="search">
+  
         <h2>Search By Area</h2>
         <ul>
-            <li :name="area" class="areaItem" @click="selectArea(area)" :key="area" v-for="area in locationArea">
+            <li :name="area" class="areaItem" @click="filterByArea(area)" :key="area" v-for="area in locationArea">
                 {{area}}
             </li>
-            <li @click="filterByArea()">
-                *FILTER*
-            </li>
         </ul>
-    </div>
+
     </div>
 </template>
 
@@ -46,7 +43,8 @@ export default {
             });
             
         },
-        filterByArea(){
+        filterByArea(area){
+            this.selectArea(area);
         axios.get(process.env.VUE_APP_REMOTE_API + '/searchArea',{params: {
       area : this.currentArea
     }}).then(
@@ -59,6 +57,9 @@ export default {
 </script>
 
 <style>
+#search{
+    width: 20%;
+}
 #selected{
     background: green;
 
@@ -69,14 +70,17 @@ export default {
 
 #search ul{
     list-style: none;
-    text-align: left;
-    padding: 3px;
+    text-align: right;
     border: solid 2px white;
-    width: 25%;
+    width: 100%;
+    padding: 0;
 }
 #search li{
-border-bottom: solid 1px white;
-padding: 2px;
+    padding: 2px 0 0 0;
+}
+
+#search ul:hover{
+    cursor: pointer;
 }
 h2{
     text-align:left;

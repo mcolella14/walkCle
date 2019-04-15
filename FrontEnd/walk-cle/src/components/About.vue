@@ -56,7 +56,7 @@ export default {
 
 <style>
 #box{
-    background: white;
+    background: rgba(255, 255, 255, 0.6);
     color:black;
     padding: 0px;
     border-radius: 0px;

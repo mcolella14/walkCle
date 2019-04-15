@@ -61,7 +61,9 @@ export default {
                     token = token.replace(/"/g, '');
                     }
                     auth.saveToken(token);
-                    EventBus.$emit('i-got-clicked', this.user.username)
+                    EventBus.$emit('i-got-clicked', this.user.username);
+                    EventBus.$emit('login');
+
                     this.$router.push('/');
 
                 }

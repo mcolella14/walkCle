@@ -67,7 +67,7 @@ export default {
   
   flex-wrap: nowrap;
   justify-self: center;
-  margin: 0 10px 0 0;
+  margin: 0 250px 0 0;
   width: 100%;
 
 }

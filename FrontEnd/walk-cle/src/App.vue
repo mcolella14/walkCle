@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Nav/>
+    <sliding-nav/>
     
     <router-view/>
   </div>
@@ -8,13 +8,13 @@
 
 <script>
 import Nav from "@/components/Nav.vue";
+import SlidingNav from "@/components/SlidingNav.vue"
 
 
 export default {
   name: "App",
   components: {
-    Nav
-    
+    SlidingNav
   }
 };
 </script>
@@ -22,7 +22,6 @@ export default {
 
 <style>
 #app {
-  
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,7 +29,7 @@ export default {
  
   background-image: url('assets/cleveland-skyline-at-night-2x3-magnet.jpg');
   background-color: aquamarine;
-  height: 1000px;
+  height: 100%;
 }
 
 input {

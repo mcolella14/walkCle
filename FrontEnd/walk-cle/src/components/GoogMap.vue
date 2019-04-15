@@ -7,7 +7,7 @@
     <gmap-map id="map"
 
       :center="center"
-      :zoom="11"
+      :zoom="12"
       style=""
       ref="myMap"
     >

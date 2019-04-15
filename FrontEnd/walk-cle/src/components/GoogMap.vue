@@ -127,7 +127,6 @@ export default {
   margin-bottom: 20px;
  width: 700px;
  height: 500px;
- opacity: 0.8;
  /*transition: 5s;*/
  
 } 

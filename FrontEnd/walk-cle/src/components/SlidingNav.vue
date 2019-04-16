@@ -156,8 +156,7 @@ body{
   top:0;
   right:0;
   background-color:white;
-  /* #111*/
-  opacity:0.8; 
+  box-shadow: 0 0 100px black;
   overflow-x:hidden;
   padding-top:60px;
   transition:0.5s;

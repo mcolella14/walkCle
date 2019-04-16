@@ -9,7 +9,7 @@
       </select>
       <b>End:</b>
       <select id="end">
-        
+        <option></option>
       
         <option v-for="(location, $index) in locations" v-bind:value="location.name" :key="$index">{{location.name}}</option>
         <!-- <option :key="index"

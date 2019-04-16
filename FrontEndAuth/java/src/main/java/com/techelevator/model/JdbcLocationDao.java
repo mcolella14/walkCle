@@ -109,9 +109,9 @@ public class JdbcLocationDao implements LocationDao{
 	 	
 	    public List<Location> getCheckedInLocations(String username){
 	    	List<Location> allCheckedLocations = new ArrayList<Location>();
-	    	String sqlGetAllCheckedInLocations = "SELECT checked_in_loc "
+	    	String sqlGetAllCheckedInLocations =  "SELECT checked_in_loc "
 	    										+ "FROM user u"
-	    										+ " JOIN user_location ul "
+	    										+ "JOIN user_location ul "
 	    										+ "ON u.id = ul.id "
 	    										+ "JOIN location l "
 	    										+ "ON ul.name = l.name "

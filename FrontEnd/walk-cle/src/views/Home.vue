@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-
+    <directions/>
     <goog-map v-bind:isLogged="isLogged" id="map"/>
     <about id="about"/>
    <!-- <search id="search"/>-->
@@ -11,6 +11,7 @@
 import GoogMap from "@/components/GoogMap.vue";
 import About from "@/components/About.vue";
 import Search from "@/components/Search.vue";
+import Directions from "@/components/Directions.vue";
 
 export default {
 
@@ -43,7 +44,8 @@ export default {
   components: {
     GoogMap,
     About,
-    Search
+    Search,
+    Directions
 
   },
   methods:{

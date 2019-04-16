@@ -73,10 +73,14 @@ export default {
     text-align: right;
     border: solid 2px white;
     width: 100%;
-    padding: 0;
+    padding: 5px;
+    margin-right: 0px;
+    border-radius: 3px;
+    background: white;
 }
 #search li{
     padding: 2px 0 0 0;
+    color:black;
 }
 
 #search ul:hover{

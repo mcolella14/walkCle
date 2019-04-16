@@ -6,7 +6,7 @@
         </div>
         <ul class ="navList">
             <!--<li id="addLocation" v-if="showLogout"><router-link :to="{ name: 'AddLocation' }">Add Location</router-link></li>-->
-            <li id="profile" v-if="showLogout"><router-link :to="{ name: 'Home' }">{{this.username}}</router-link></li>
+            <li id="profile" v-if="showLogout"><router-link v-bind:username="username" :to="{ name: 'Profile' }">{{this.username}}</router-link></li>
             <li v-if="!showLogout"><router-link :to="{ name: 'Login' }">Login</router-link></li>
             <li v-if="showLogout" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>
             <li v-if="!showLogout"><router-link :to="{ name: 'Register' }">Register</router-link></li>
@@ -59,6 +59,7 @@ export default {
              auth.destroyToken();
              this.showLogout = this.isLogged();
              EventBus.$emit('logout');
+             location.reload();
         }
     }
 
@@ -77,6 +78,10 @@ export default {
 
 .navList a:visited {
  color: white;
+}
+
+.navList a:visited:hover {
+ color: black;
 }
 
 #slide-nav a:visited{
@@ -117,5 +122,17 @@ export default {
 
 #profile a.router-link-exact-active {
   color: lime;
+}
+
+li{
+    align-self: center;
+    padding: 10px 5px 10px 5px;
+}
+
+li:hover{
+    text-align: center;
+  background-color: white;
+  color:#000;
+   border-radius: 10px;
 }
 </style>

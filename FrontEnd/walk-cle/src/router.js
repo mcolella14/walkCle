@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
 import AddLocation from './views/AddLocation.vue'
+import Profile from './views/Profile.vue'
 
 import auth from '@/auth'
 
@@ -32,6 +33,11 @@ const router = new Router({
       path:'/addLocation',
       name: 'AddLocation',
       component: AddLocation
+    },
+    {
+      path:'/profile',
+      name: 'Profile',
+      component: Profile
     }
 
   ]

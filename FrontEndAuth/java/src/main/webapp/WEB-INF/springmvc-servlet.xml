@@ -39,6 +39,7 @@
 						<value>/newLocation</value>
 						<value>/searchArea</value>
 						<value>/checkedInLocations</value>
+						<value>/checkIn</value>
 						
 					</list>
 				</property>

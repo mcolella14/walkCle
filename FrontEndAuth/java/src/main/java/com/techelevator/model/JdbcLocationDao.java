@@ -124,4 +124,10 @@ public class JdbcLocationDao implements LocationDao{
 			}
 			return allCheckedLocations;
 		}
+	    
+	    public void addCheckedInLocation(String location, int id) {
+	    	String sqlAddCheckedInLocation = " INSERT INTO users_location (location_name, id) VALUES (?, ?);";
+	    	jdbcTemplate.update(sqlAddCheckedInLocation, location, id);
+	    	
+	    }
 }

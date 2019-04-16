@@ -11,7 +11,6 @@ import com.techelevator.authentication.UserCreationException;
 import com.techelevator.model.Location;
 import com.techelevator.model.LocationDao;
 import com.techelevator.model.User;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
@@ -59,3 +58,5 @@ public class AccountController {
 	}
 
 }
+
+	 

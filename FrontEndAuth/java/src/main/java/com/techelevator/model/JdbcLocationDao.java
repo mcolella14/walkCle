@@ -106,4 +106,22 @@ public class JdbcLocationDao implements LocationDao{
 	       
 	        return locations;
 	    }
+	 	
+	    public List<Location> getCheckedInLocations(String username){
+	    	List<Location> allCheckedLocations = new ArrayList<Location>();
+	    	String sqlGetAllCheckedInLocations = "SELECT checked_in_loc "
+	    										+ "FROM user u"
+	    										+ " JOIN user_location ul "
+	    										+ "ON u.id = ul.id "
+	    										+ "JOIN location l "
+	    										+ "ON ul.name = l.name "
+	    										+ "WHERE u.username = ?";
+	    	SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllCheckedInLocations, username);
+			while(results.next()) {
+				Location someLocation = mapResultToLocation(results);
+//				someLocation.setDateCheckedIn(results.getTimestamp("check_in_date").toLocalDateTime());
+				allCheckedLocations.add(someLocation);
+			}
+			return allCheckedLocations;
+		}
 }

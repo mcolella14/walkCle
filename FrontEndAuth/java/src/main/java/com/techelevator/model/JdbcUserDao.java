@@ -6,7 +6,6 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import com.techelevator.authentication.PasswordHasher;
-import com.techelevator.wrestlermodel.Wrestler;
 
 import org.bouncycastle.util.encoders.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -114,24 +113,8 @@ public class JdbcUserDao implements UserDao {
 
         return users;
     }
+
     
-    public List<Location> getCheckedInLocations(){
-    	List<Location> allCheckedLocations = new ArrayList<Location>();
-    	String sqlGetAllCheckedInLocations = "SELECT checked_in_loc FROM user u JOIN user_location ul ON u.id = ul.id JOIN location l ON ul.name = l.name WHERE id = ?";
-    	SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllCheckedInLocations);
-		while(results.next()) {
-			Location someLocation = new Location();
-			someLocation.setArea(results.getString("area"));
-			someLocation.setName(results.getString("name"));
-			someLocation.setLatitude(results.getLong("lat"));
-			someLocation.setLongitude(results.getLong("lng"));
-			someLocation.setCategory(results.getString("category"));
-//			someWrestler.setDateSubmitted(results.getTimestamp("submit_date").toLocalDateTime());
-			allCheckedLocations.add(someLocation);
-		}
-		return allCheckedLocations;
-	}
-    }
 
     private User mapResultToUser(SqlRowSet results) {
         User user = new User();

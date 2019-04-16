@@ -217,6 +217,4 @@ UPDATE location
 SET lat = 41.4843807, lng = -81.70451869999999
 WHERE place_id = 'ChIJA-V2u23wMIgRe6rtMBxi8uQ';
 
-
-
-
+;

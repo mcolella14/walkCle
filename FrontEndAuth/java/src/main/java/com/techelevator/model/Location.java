@@ -1,5 +1,7 @@
 package com.techelevator.model;
 
+import java.time.LocalDateTime;
+
 public class Location {
 	
 	private String name;
@@ -9,6 +11,7 @@ public class Location {
 	private double latitude;
 	private double longitude;
 	private String description;
+	private LocalDateTime dateCheckedIn;
 	
 	public String getDescription() {
 		return description;
@@ -51,6 +54,12 @@ public class Location {
 	}
 	public void setPlace_id(String place_id) {
 		this.place_id = place_id;
+	}
+	public LocalDateTime getDateCheckedIn() {
+		return dateCheckedIn;
+	}
+	public void setDateCheckedIn(LocalDateTime dateCheckedIn) {
+		this.dateCheckedIn = dateCheckedIn;
 	}
 
 }

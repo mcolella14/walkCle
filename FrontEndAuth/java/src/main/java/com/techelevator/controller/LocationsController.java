@@ -54,5 +54,14 @@ public class LocationsController {
 		 	List<Location>filteredLocations = locationDao.getFilteredAreas(area);
 		 	return filteredLocations;
 	 }
+	 
+	 @GetMapping("/checkedInLocations")
+	 public List<Location> displayAllCheckedInLocations(@RequestParam("username") String username){
+		 List<Location> allCheckedInLocations = locationDao.getCheckedInLocations(username);
+		 return allCheckedInLocations;
+	 }
+	 
+
+	 
 
 }

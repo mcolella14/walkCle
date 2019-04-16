@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <directions/>
-    <goog-map v-bind:isLogged="isLogged" id="map"/>
+    <!-- <goog-map v-bind:isLogged="isLogged" id="map"/> -->
     <about id="about"/>
    <!-- <search id="search"/>-->
   </div>

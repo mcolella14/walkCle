@@ -5,31 +5,39 @@
     <div id="floating-panel">
       <b>Start:</b>
       <select id="start">
-        <option/>
-        <option value="Progressive Field">Progressive Field</option>
-        <option value="Flannery's Bar Cleveland">Flannery's Bar</option>
-        <option value="Great Lakes Science Center">Great Lakes Science Center</option>
-        <option value="staten island ferry terminal, new york, ny">Staten Island Ferry Terminal</option>
-        <option value="101 E 125th Street, New York, NY">Harlem - 125th St Station</option>
+        <option value="7100 Euclid Ave #140, Cleveland, OH 44103">Tech Elevator</option>
       </select>
       <b>End:</b>
       <select id="end">
-        <option/>
-        <option value="7100 Euclid Ave #140, Cleveland, OH 44103">Tech Elevator</option>
-        <option value="W 49th St & 5th Ave, New York, NY 10020">Rockefeller Center</option>
-        <option value="moma, New York, NY">MOMA</option>
+        
+      
+        <option v-for="(location, $index) in locations" v-bind:value="location.name" :key="$index">{{location.name}}</option>
+        <!-- <option :key="index"
+        v-for='(location, index) in locations' :value = 'location.name'>{{location.name}}</option> -->
+        <!-- <option value="Progressive Field">Progressive Field</option>
+        <!-- <option value="Great Lakes Science Center">Great Lakes Science Center</option> -->
+        <option value="Progressive Field">MOMA</option>
         <option value="350 5th Ave, New York, NY, 10118">Empire State Building</option>
         <option value="253 West 125th Street, New York, NY">Apollo Theater</option>
-        <option value="1 Wall St, New York, NY">Wall St</option>
+        <option value="1 Wall St, New York, NY">Wall St</option> -->
       </select>
     </div>
-    <div id="map"></div>
+    <div id="directionsMap"></div>
     <div id="warnings-panel"></div>
   </div>
 </template>
+
+
     <script>
 export default {
   name: "directions",
+
+  data(){
+    return{
+      locations: []
+        
+    }
+  },
   methods: {
     initMap() {
       var markerArray = [];
@@ -38,7 +46,7 @@ export default {
       var directionsService = new google.maps.DirectionsService();
 
       // Create a map and center it on Manhattan.
-      var map = new google.maps.Map(document.getElementById("map"), {
+      var map = new google.maps.Map(document.getElementById("directionsMap"), {
         zoom: 13,
         center: { lat: 41.49999, lng: -81.689366 }
       });
@@ -140,16 +148,34 @@ export default {
     }
   },
   mounted() {
-    console.log("mounted");
-    this.initMap();
+
+    this.$gmapApiPromiseLazy().then(() => {
+      this.initMap();
+    })
+
+  },
+  created(){
+    fetch(`${process.env.VUE_APP_REMOTE_API}/`, {
+      method: 'GET',
+      headers: {
+      }
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.locations = data;
+      })
+      .catch((err) => console.error(err));
+
   }
 };
 </script>
    
-    <style>
+    <style scoped>
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-#map {
+#directionsMap {
   height: 100vh;
   width: 100vw;
 }

@@ -38,6 +38,11 @@ const router = new Router({
       path:'/profile',
       name: 'Profile',
       component: Profile
+    }, 
+    {
+      path:'/directionsView',
+      name: 'DirectionsView',
+      component: DirectionsView
     }
 
   ]

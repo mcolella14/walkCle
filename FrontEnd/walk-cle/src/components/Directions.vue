@@ -5,6 +5,7 @@
     <div id="floating-panel">
       <b>Start:</b>
       <select id="start">
+        <option/>
         <option value="Progressive Field">Progressive Field</option>
         <option value="Flannery's Bar Cleveland">Flannery's Bar</option>
         <option value="Great Lakes Science Center">Great Lakes Science Center</option>
@@ -13,6 +14,7 @@
       </select>
       <b>End:</b>
       <select id="end">
+        <option/>
         <option value="7100 Euclid Ave #140, Cleveland, OH 44103">Tech Elevator</option>
         <option value="W 49th St & 5th Ave, New York, NY 10020">Rockefeller Center</option>
         <option value="moma, New York, NY">MOMA</option>
@@ -38,7 +40,7 @@ export default {
       // Create a map and center it on Manhattan.
       var map = new google.maps.Map(document.getElementById("map"), {
         zoom: 13,
-        center: { lat: 40.771, lng: -73.974 }
+        center: { lat: 41.49999, lng: -81.689366 }
       });
 
       // Create a renderer for directions and bind it to the map.
@@ -102,9 +104,9 @@ export default {
             //document.getElementById("warnings-panel").innerHTML = "<b>" + response.routes[0].warnings + "</b>";
             directionsDisplay.setDirections(response);
             vm.showSteps(response, markerArray, stepDisplay, map);
-          } else {
-            window.alert("Directions request failed due to " + status);
-          }
+           } //else {
+          //   window.alert("Directions request failed due to " + status);
+          // }
         }
       );
     },

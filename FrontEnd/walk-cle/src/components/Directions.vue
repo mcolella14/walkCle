@@ -12,14 +12,6 @@
         <option></option>
       
         <option v-for="(location, $index) in locations" v-bind:value="location.name" :key="$index">{{location.name}}</option>
-        <!-- <option :key="index"
-        v-for='(location, index) in locations' :value = 'location.name'>{{location.name}}</option> -->
-        <!-- <option value="Progressive Field">Progressive Field</option>
-        <!-- <option value="Great Lakes Science Center">Great Lakes Science Center</option> -->
-        <option value="Progressive Field">MOMA</option>
-        <option value="350 5th Ave, New York, NY, 10118">Empire State Building</option>
-        <option value="253 West 125th Street, New York, NY">Apollo Theater</option>
-        <option value="1 Wall St, New York, NY">Wall St</option> -->
       </select>
     </div>
     <div id="directionsMap"></div>
@@ -188,21 +180,26 @@ body {
 }
 #floating-panel {
   position: absolute;
-  top: 10px;
-  left: 25%;
+  top: 250px;
+  left: 2%;
   z-index: 5;
   background-color: #fff;
   padding: 5px;
   border: 1px solid #999;
   text-align: center;
   font-family: "Roboto", "sans-serif";
-  line-height: 30px;
+  line-height: 50px;
   padding-left: 10px;
+  box-shadow: 0 0 100px black;
+  border-radius: 10px;
 }
 #warnings-panel {
   width: 100%;
   height: 10%;
   text-align: center;
+}
+b{
+  padding-left: 10px;
 }
 </style>
   

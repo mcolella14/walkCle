@@ -109,13 +109,13 @@ public class JdbcLocationDao implements LocationDao{
 	 	
 	    public List<Location> getCheckedInLocations(String username){
 	    	List<Location> allCheckedLocations = new ArrayList<Location>();
-	    	String sqlGetAllCheckedInLocations = "SELECT checked_in_loc "
-	    										+ "FROM user u"
-	    										+ " JOIN user_location ul "
-	    										+ "ON u.id = ul.id "
-	    										+ "JOIN location l "
-	    										+ "ON ul.name = l.name "
-	    										+ "WHERE u.username = ?";
+	    	String sqlGetAllCheckedInLocations = "SELECT l.location_name, area, category, place_id, lat, lng, description \n" + 
+								    			"FROM location l \n" + 
+								    			"JOIN  users_location ul \n" + 
+								    			"ON ul.location_name = l.location_name \n" + 
+								    			"JOIN users u \n" + 
+								    			"ON u.id = ul.id \n" + 
+								    			" WHERE u.username = ?";
 	    	SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetAllCheckedInLocations, username);
 			while(results.next()) {
 				Location someLocation = mapResultToLocation(results);
@@ -124,4 +124,10 @@ public class JdbcLocationDao implements LocationDao{
 			}
 			return allCheckedLocations;
 		}
+	    
+	    public void addCheckedInLocation(String location, int id) {
+	    	String sqlAddCheckedInLocation = " INSERT INTO users_location (location_name, id) VALUES (?, ?);";
+	    	jdbcTemplate.update(sqlAddCheckedInLocation, location, id);
+	    	
+	    }
 }

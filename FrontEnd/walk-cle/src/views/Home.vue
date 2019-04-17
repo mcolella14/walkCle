@@ -5,13 +5,13 @@
     <about id="about"/>
    <search id="search"/>
    <div id="info">
-     <h1>Walk Cle</h1>
+     <h1>WalkCLE</h1>
      <p>Welcome to Cleveland, Ohio! Whether you are an avid sports fan, love great entertainment, or even 
        better food you've come to the right place! Not sure where to start? No problem, We've 
        cultivated some of the top spots in town for you. From historical West Side Market in Ohio, city
        to one of the most visited art museums in the US at the Cleveland Art Museum, Cleveland has it all! 
        Take a look around WalkCle. Start discovering what Cleveland really has to offer. 
-       Looking to check out a particular region, <router-link :to="{ name: 'Login' }">Login</router-link> 
+       Looking to check out a particular region, <router-link id = "about-login" :to="{ name: 'Login' }">Login</router-link> 
        to unlock ablility to filter area or even by activity then tab on over directions, drop in your 
        next stop and away you go!
        .....(next features added).......</p> 
@@ -79,12 +79,36 @@ export default {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  text-decoration: underline;
+  text-shadow:
+		-2px -2px 0 #000,
+		2px -2px 0 #000,
+		-2px 2px 0 #000,
+		2px 2px 0 #000;
 }
 #info p{
   color: white;
   text-decoration: none;
   font-size: 20px;
+  font-weight: bold;
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+#info {
+  background-color: darkred;
+  border: 1px solid black;
+  opacity: .9;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about-login{
+  color:blue;
+  text-decoration: none;
 }
   
 </style>

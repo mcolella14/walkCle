@@ -6,7 +6,7 @@
     <search id="search"/>
     <div v-if="!isLogged" id="hide">
     <div id="info" v-on:click="isLogged">
-      <h1>WalkCLE</h1>
+      <h1>WalkCLE&#8482;</h1>
       <p>Welcome to Cleveland, Ohio! Whether you are an avid sports fan, love great entertainment, or even 
         better food then you've come to the right place! Not sure where to start? No problem, We've 
         cultivated some of the top spots in town for you. From historical West Side Market in Ohio City,

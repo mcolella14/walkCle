@@ -11,7 +11,7 @@
         cultivated some of the top spots in town for you. From historical West Side Market in Ohio, city
         to one of the most visited art museums in the US at the Cleveland Art Museum, Cleveland has it all! 
         Take a look around WalkCle, and start discovering what Cleveland really has to offer. 
-        Looking to check out a particular region? First time to WalkCle <router-link :to="{ name: 'Register' }">Register</router-link> 
+        Looking to check out a particular region? First time to WalkCle <router-link id="about-register" :to="{ name: 'Register' }">Register</router-link> 
         or simply <router-link id = "about-login" :to="{ name: 'Login' }">Login</router-link> 
         to unlock ablility to filter area or even by activity then tab on over directions, drop in your 
         next stop and away you go! After you arrive make sure to check in your location. 
@@ -115,6 +115,17 @@ export default {
 }
 
 #about-login:hover{
+  background-color: white;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+#about-register{
+  color:blue;
+  text-decoration: none;
+}
+
+#about-register:hover{
   background-color: white;
   border-radius: 5px;
   padding: 3px;

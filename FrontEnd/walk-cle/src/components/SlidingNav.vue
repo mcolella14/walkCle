@@ -23,17 +23,8 @@
   <div id="side-menu" class="side-nav">
     <a href="#" class="btn-close" v-on:click="closeSlideMenu()">&times;</a>
     <router-link id="router" :to="{ name: 'Home' }">Home</router-link>
-    <a class="link" href="#" v-on:click="description">Regions</a>
-
-    <a class="link" href="#">Landmarks</a>
-    <a class="link" href="#">Sports</a>
-    <a class="link" href="#">Entertainment</a>
-    <a class="link" href="#">Night Life</a>
-    <a class="link" href="#">Eats</a>
-    <a class="link" href="#">Parks</a>
-    <a class="link" href="#">Museums</a>
-    <a class="link" ><router-link :to="{ name: 'CheckInView' }">Check In</router-link></a>
-    <a class="link" ><router-link :to="{ name: 'DirectionsView' }">Directions</router-link></a>
+    <router-link id="router" :to="{ name: 'CheckInView' }">Check In</router-link>
+    <router-link id="router" :to="{ name: 'DirectionsView' }">Directions</router-link>
   </div>
 </div>
 

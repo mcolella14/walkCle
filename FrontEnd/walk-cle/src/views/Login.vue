@@ -15,6 +15,9 @@
         <div class="alert alert-success" role="alert" v-if="this.$route.query.registration">
         Thank you for registering, please sign in.
         </div>
+        <div id="serverError" class="alert alert-danger" role="alert">
+        </div>
+        
         <!-- <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
         </div> -->
@@ -69,7 +72,11 @@ export default {
 
                 }
                 })
-                .catch((err) => console.error(err));
+                .catch((err) => {
+                    console.error(err);
+                    document.getElementById('serverError').innerText = 'Something went wrong, please try again later...'
+                }
+                );
 
 
         },
@@ -79,6 +86,11 @@ export default {
 </script>
 
 <style>
+#serverError{
+    color: red;
+    font-weight:lighter;
+    font-size: 110%; 
+}
 #login{
     margin-left:auto;
     margin-right: auto;

@@ -32,6 +32,7 @@
     <a class="link" href="#">Eats</a>
     <a class="link" href="#">Parks</a>
     <a class="link" href="#">Museums</a>
+    <a class="link" ><router-link :to="{ name: 'CheckInView' }">Check In</router-link></a>
     <a class="link" ><router-link :to="{ name: 'DirectionsView' }">Directions</router-link></a>
   </div>
 </div>

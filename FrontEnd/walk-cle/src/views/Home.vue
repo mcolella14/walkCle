@@ -27,30 +27,13 @@ import Search from "@/components/Search.vue";
 
 export default {
 
-  props: ['isLogged'],
+  props: ['isLogged', 'locations'],
 
   data(){
     return{
-      locations: []
+      //locations: []
         
     }
-  },
-  created(){
-    fetch(`${process.env.VUE_APP_REMOTE_API}/`, {
-      method: 'GET',
-      headers: {
-      }
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.locations = data;
-      })
-      .catch((err) => console.error(err));
-    
-    
-
   },
 
   components: {

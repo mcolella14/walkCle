@@ -11,6 +11,5 @@ public interface LocationDao {
 	public List<Location> getFilteredCategory(String category);
 	public List<Location> getFilteredAreaAndCategory(String area, String category);
     public List<Location> getCheckedInLocations(String username);
-    public void addCheckedInLocation(String location, int id);
 
 }

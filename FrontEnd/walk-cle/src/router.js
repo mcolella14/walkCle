@@ -6,6 +6,7 @@ import Register from './views/Register.vue'
 import AddLocation from './views/AddLocation.vue'
 import Profile from './views/Profile.vue'
 import DirectionsView from './views/DirectionsView.vue'
+import CheckInView from './views/CheckInView.vue'
 
 import auth from '@/auth'
 
@@ -44,6 +45,11 @@ const router = new Router({
       path:'/directionsView',
       name: 'DirectionsView',
       component: DirectionsView
+    },
+    {
+      path:'/checkInView',
+      name: 'CheckInView',
+      component: CheckInView
     }
 
   ]
@@ -51,7 +57,7 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
-  const publicPages = ['/', '/login', '/register','/addLocation', 'profile'];
+  const publicPages = ['/', '/login', '/register','/addLocation', 'profile', 'check'];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = auth.getUser();
 

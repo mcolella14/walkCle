@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Nav/>
-    <router-view v-bind:isLogged="isLogged" />
+    <router-view :locations="locations" :isLogged="isLogged" />
   </div>
 </template>
 
@@ -15,12 +15,30 @@ export default {
   name: "App",
   data(){
     return{
+      locations: [],
       isLogged: false
     }
   },
   components: {
     SlidingNav,
     Nav
+  },
+  created(){
+    fetch(`${process.env.VUE_APP_REMOTE_API}/`, {
+      method: 'GET',
+      headers: {
+      }
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.locations = data;
+      })
+      .catch((err) => console.error(err));
+    
+    
+
   },
   mounted(){
     EventBus.$on('login', ()=>{

@@ -56,10 +56,10 @@ export default {
             })
             .then( ()=>{
                  console.log('Posted!');
-                document.getElementById('success').innerText = 'You have successfully checked in to ' + this.locationName
+                document.getElementById('success').innerText = 'You have successfully checked in to ' + this.checkedInLocation.locationName
                 })
             .catch( error =>{
-                document.getElementById('failure').innerText = 'You are unable to check in to ' + this.locationName
+                document.getElementById('failure').innerText = 'You are unable to check in to ' + this.checkedInLocation.locationName
 
     })
     }

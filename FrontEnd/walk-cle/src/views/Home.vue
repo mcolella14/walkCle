@@ -7,15 +7,15 @@
     <div id="info">
       <h1>WalkCLE</h1>
       <p>Welcome to Cleveland, Ohio! Whether you are an avid sports fan, love great entertainment, or even 
-        better food you've come to the right place! Not sure where to start? No problem, We've 
-        cultivated some of the top spots in town for you. From historical West Side Market in Ohio, city
-        to one of the most visited art museums in the US at the Cleveland Art Museum, Cleveland has it all! 
-        Take a look around WalkCle, and start discovering what Cleveland really has to offer. 
-        Looking to check out a particular region? First time to WalkCle <router-link id="about-register" :to="{ name: 'Register' }">Register</router-link> 
+        better food then you've come to the right place! Not sure where to start? No problem, We've 
+        cultivated some of the top spots in town for you. From historical West Side Market in Ohio City,
+        to one of the most visited art museums in the US, the Cleveland Art Museum. Cleveland has it all! 
+        Take a look around WalkCLE, and start discovering what Cleveland has to offer. 
+        Looking to check out a particular region? First time to WalkCle? <router-link id="about-register" :to="{ name: 'Register' }">Register</router-link> 
         or simply <router-link id = "about-login" :to="{ name: 'Login' }">Login</router-link> 
         to unlock ablility to filter area or even by activity then tab on over directions, drop in your 
         next stop and away you go! After you arrive make sure to check in your location. 
-        Check in to enough spots around Cleveland to unlock your WalkCle badges. 
+        Check in to enough spots around Cleveland to unlock your WalkCLE badges. 
         .....(next features added).......</p> 
     </div>
   </div>

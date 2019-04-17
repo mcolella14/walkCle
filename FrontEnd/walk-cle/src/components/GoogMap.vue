@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    <h2 class="search" v-if="!isLogged">Log in to filter locations by area!</h2>
+    <!-- <h2 class="search" v-if="!isLogged">Log in to filter locations by area!</h2> -->
    <search class ="search" v-if="isLogged" v-bind:area = "area" v-bind:locations = "locations"/>
    
    

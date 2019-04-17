@@ -7,6 +7,7 @@
             <input type="password" name="password" v-model="user.password" placeholder="Password" required />
             <button type="submit" class = 'btn' >Login</button>  
         </form>
+           <button><router-link :to="{ name: 'Register' }" class='btn'>Register</router-link></button>
 
         <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
@@ -89,5 +90,10 @@ export default {
 .btn {
     border: .5px solid lightgrey;
     border-radius: 10px;
+}
+#login button {
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 4px;
 }
 </style>

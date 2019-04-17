@@ -71,6 +71,8 @@ export default {
 }
 #footer{
   color:white;
+  background: black;
+  padding-top: 3.5px;
 }
 
 input {

@@ -127,4 +127,6 @@ public class JdbcLocationDao implements LocationDao{
 			return allCheckedLocations;
 		}
 	    
+	   
+	    
 }

@@ -12,7 +12,7 @@ public class JdbcCheckedInLocationDao implements CheckedInLocationDao{
 	private JdbcTemplate jdbcTemplate;
 	
 	 @Autowired
-	    public void JdbcLocationDao(DataSource dataSource) {
+	    public JdbcCheckedInLocationDao(DataSource dataSource) {
 	        this.jdbcTemplate = new JdbcTemplate(dataSource);
 	    }
 	 

@@ -73,6 +73,7 @@ export default {
   color:white;
   background: black;
   padding-top: 3.5px;
+  margin-top: 50%;
 }
 
 input {

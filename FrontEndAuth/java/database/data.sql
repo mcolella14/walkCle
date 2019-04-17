@@ -217,4 +217,158 @@ UPDATE location
 SET lat = 41.4843807, lng = -81.70451869999999
 WHERE place_id = 'ChIJA-V2u23wMIgRe6rtMBxi8uQ';
 
-;
+UPDATE location
+SET location_name = 'First Energy Stadium'
+WHERE location_name = 'First Energy Field';
+
+UPDATE location
+SET area = 'The Flats'
+WHERE area = 'The Flatts';
+
+UPDATE location
+SET lat = 41.499274, lng = -81.69012599999999
+WHERE location_name = 'Hilarities';
+
+UPDATE location
+SET lat = 41.5028937, lng = -81.6811175
+WHERE location_name = 'Hofbräuhaus Cleveland';
+
+UPDATE location
+SET lat = 41.4990104, lng = -81.69086089999999
+WHERE location_name = 'House of Blues Cleveland';
+
+UPDATE location 
+SET location_name = 'Rocket Mortgage Field House'
+WHERE location_name = 'Rocket Morgage Field House';
+
+UPDATE location
+SET lat = 41.4963298, lng = -81.70292049999999
+WHERE location_name = 'Jacobs Pavilion at Nautica';
+
+UPDATE location
+SET lat = 41.49653929999999, lng = -81.7038046
+WHERE location_name = 'Greater Cleveland Aquarium';
+
+UPDATE location
+SET lat = 41.4982619, lng = -81.7064228
+WHERE location_name = 'Music Box Supper Club';
+
+UPDATE location
+SET lat = 41.5013048, lng = -81.68079469999999
+WHERE location_name = 'Playhouse Square';
+
+UPDATE location
+SET lat = 41.5038647, lng = -81.6536524
+WHERE location_name = 'Agora Theater & Ballroom';
+
+UPDATE location
+SET lat = 41.4985688, lng = -81.6930995
+WHERE location_name = 'JACK Cleveland Casino';
+
+UPDATE location
+SET lat = 41.5063477, lng = -81.60933609999999
+WHERE location_name = 'Severance Hall';
+
+UPDATE location
+SET lat = 41.510065, lng = -81.691557
+WHERE location_name = 'USS Cod Submarine Memorial';
+
+UPDATE location
+SET lat = 41.4794648, lng = -81.6842722
+WHERE location_name = 'The Flying Monkey Pub';
+
+UPDATE location
+SET lat = 41.4785281, lng = -81.6903112
+WHERE location_name = 'Lincoln Park';
+
+UPDATE location
+SET lat = 41.4731669, lng = -81.6863652
+WHERE location_name = 'Tremont Park';
+
+UPDATE location
+SET location_name ='Tremont Park Ohio'
+WHERE location_name = 'Tremont Park';
+
+UPDATE location
+SET location_name = 'Lincoln Park Tremont'
+WHERE location_name = 'Lincoln Park';
+
+UPDATE location
+SET lat = 41.4771844, lng = -81.6953077
+WHERE location_name = 'Tremont Taphouse';
+
+UPDATE location
+SET lat = 41.4833813, lng = -81.7002633
+WHERE location_name = 'Forest City Brewery';
+
+UPDATE location
+SET lat = 41.485995, lng = -81.70514419999999
+WHERE location_name = 'Ohio City Burrito';
+
+UPDATE location
+SET lat = 41.48544750000001, lng = -81.7040138
+WHERE location_name = 'TownHall';
+
+UPDATE location
+SET location_name = 'Ohio City TownHall'
+WHERE location_name = 'TownHall';
+
+UPDATE location
+SET lat = 41.4846863, lng = -81.70306189999999
+WHERE location_name = 'West Side Market';
+
+UPDATE location
+SET lat = 41.5001277, lng = -81.6904967
+WHERE location_name = 'The Arcade Cleveland';
+
+UPDATE location
+SET lat = 41.5102138, lng = -81.69547519999999
+WHERE location_name = 'GOODTIME III';
+
+UPDATE location
+SET lat = 41.5092527, lng = -81.69804499999999
+WHERE location_name = 'Steamship William G. Mather Museum';
+
+UPDATE location
+SET lat = 41.5016942, lng = -81.6929502
+WHERE location_name = 'Fountain Of Eternal Life';
+
+UPDATE location
+SET lat = 41.497226, lng = -81.69404900000001
+WHERE location_name = 'Tower City Center';
+
+UPDATE location
+SET lat = 41.4989235, lng = -81.69023179999999
+WHERE location_name = 'Mabel''s BBQ';
+
+UPDATE location
+SET lat = 41.49914649999999, lng = -81.6900132
+WHERE location_name = 'Butcher and the Brewer';
+
+UPDATE location
+SET lat = 41.498995, lng = -81.69023199999999
+WHERE location_name = 'Wonder Bar';
+
+UPDATE location
+SET location_name = 'Wonder Bar Cleveland'
+WHERE location_name = 'Wonder Bar';
+
+UPDATE location
+SET lat = 41.4823982, lng = -81.6890059
+WHERE location_name = 'Parallax';
+
+UPDATE location
+SET location_name = 'Parallax Cleveland'
+WHERE location_name = 'Parallax';
+
+UPDATE location
+SET lat = 41.4995335, lng = -81.6929348
+WHERE location_name = 'Soldiers and Sailors Monument';
+
+UPDATE location
+SET location_name = 'Cleveland Soldiers and Sailors Monument'
+WHERE location_name = 'Soldiers and Sailors Monument';
+
+UPDATE location
+SET lat = 41.479836, lng = -81.71396829999999
+WHERE location_name = 'Platform Beer Co.';

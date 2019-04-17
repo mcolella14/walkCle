@@ -4,8 +4,8 @@
     <goog-map v-bind:isLogged="isLogged" id="map"/>
     <about id="about"/>
     <search id="search"/>
+    <div v-if="!isLogged" id="hide">
     <div id="info" v-on:click="isLogged">
-      <div v-if="!isLogged" id="hide">
       <h1>WalkCLE</h1>
       <p>Welcome to Cleveland, Ohio! Whether you are an avid sports fan, love great entertainment, or even 
         better food then you've come to the right place! Not sure where to start? No problem, We've 

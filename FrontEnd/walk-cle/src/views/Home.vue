@@ -4,7 +4,8 @@
     <goog-map v-bind:isLogged="isLogged" id="map"/>
     <about id="about"/>
     <search id="search"/>
-    <div id="info">
+    <div id="info" v-on:click="isLogged">
+      <div v-if="!isLogged" id="hide">
       <h1>WalkCLE</h1>
       <p>Welcome to Cleveland, Ohio! Whether you are an avid sports fan, love great entertainment, or even 
         better food then you've come to the right place! Not sure where to start? No problem, We've 
@@ -17,6 +18,7 @@
         next stop and away you go! After you arrive make sure to check in your location. 
         Check in to enough spots around Cleveland to unlock your WalkCLE badges. 
         .....(next features added).......</p> 
+    </div>
     </div>
   </div>
 </template>
@@ -34,6 +36,7 @@ export default {
   data(){
     return{
       //locations: []
+      isLogged: false
         
     }
   },

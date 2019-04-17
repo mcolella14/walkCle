@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    
+    <h1 class="title">WalkCLE&#8482;</h1>
     <goog-map v-bind:isLogged="isLogged" id="map"/>
     <about id="about"/>
     <search id="search"/>
@@ -133,6 +133,16 @@ export default {
   background-color: white;
   border-radius: 5px;
   padding: 3px;
+}
+.title{
+  color:white;
+  margin-left: auto;
+  margin-right: auto;
+   text-shadow:
+		-2px -2px 0 #000,
+		2px -2px 0 #000,
+		-2px 2px 0 #000,
+		2px 2px 0 #000;
 }
   
 </style>

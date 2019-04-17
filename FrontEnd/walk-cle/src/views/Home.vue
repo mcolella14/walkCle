@@ -3,19 +3,19 @@
     
     <goog-map v-bind:isLogged="isLogged" id="map"/>
     <about id="about"/>
-   <search id="search"/>
-   <div id="info">
-     <h1>WalkCLE</h1>
-     <p>Welcome to Cleveland, Ohio! Whether you are an avid sports fan, love great entertainment, or even 
-       better food you've come to the right place! Not sure where to start? No problem, We've 
-       cultivated some of the top spots in town for you. From historical West Side Market in Ohio, city
-       to one of the most visited art museums in the US at the Cleveland Art Museum, Cleveland has it all! 
-       Take a look around WalkCle. Start discovering what Cleveland really has to offer. 
-       Looking to check out a particular region, <router-link id = "about-login" :to="{ name: 'Login' }">Login</router-link> 
-       to unlock ablility to filter area or even by activity then tab on over directions, drop in your 
-       next stop and away you go!
-       .....(next features added).......</p> 
-   </div>
+    <search id="search"/>
+    <div id="info">
+      <h1>WalkCLE</h1>
+      <p>Welcome to Cleveland, Ohio! Whether you are an avid sports fan, love great entertainment, or even 
+        better food you've come to the right place! Not sure where to start? No problem, We've 
+        cultivated some of the top spots in town for you. From historical West Side Market in Ohio, city
+        to one of the most visited art museums in the US at the Cleveland Art Museum, Cleveland has it all! 
+        Take a look around WalkCle, and start discovering what Cleveland really has to offer. 
+        Looking to check out a particular region, <router-link id = "about-login" :to="{ name: 'Login' }">Login</router-link> 
+        to unlock ablility to filter area or even by activity then tab on over directions, drop in your 
+        next stop and away you go!
+        .....(next features added).......</p> 
+    </div>
   </div>
 </template>
 
@@ -55,25 +55,23 @@ export default {
 
 #about{
   justify-self: flex-end;
-  margin: 0 0 0 10px;
+
 
 }
 
 #map{
   display:flex;
-  
   flex-wrap: nowrap;
   justify-self: center;
   width: 100%;
-
 }
 
 #home{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 5% 0 5%;
 }
+
 #info h1{
   color: white;
   text-align: center;
@@ -85,6 +83,7 @@ export default {
 		-2px 2px 0 #000,
 		2px 2px 0 #000;
 }
+
 #info p{
   color: white;
   text-decoration: none;
@@ -95,13 +94,15 @@ export default {
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
+  padding: 0 50px 20px 50px;
+  line-height: 1.2;
 }
 
 #info {
   background-color: darkred;
   border: 1px solid black;
-  opacity: .7;
-  width: 75%;
+  opacity: .85;
+  width: 65%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -109,6 +110,12 @@ export default {
 #about-login{
   color:blue;
   text-decoration: none;
+}
+
+#about-login:hover{
+  background-color: white;
+  border-radius: 5px;
+  padding: 3px;
 }
   
 </style>

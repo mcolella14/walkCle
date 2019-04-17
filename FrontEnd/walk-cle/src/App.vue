@@ -72,8 +72,7 @@ export default {
 
 input {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 2px 5px 2px 5px;

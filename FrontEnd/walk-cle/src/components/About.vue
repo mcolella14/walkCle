@@ -54,7 +54,7 @@ export default {
 </script>
     
 
-<style scoped>
+<style>
 #box{
     background: rgba(255, 255, 255, 0.6);
     color:black;

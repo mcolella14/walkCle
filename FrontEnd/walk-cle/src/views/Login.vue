@@ -3,11 +3,11 @@
     <h1>Login</h1>
     
         <form @submit.prevent="login">
-            <input type="text" name="username" v-model="user.username" placeholder="Username" required />
-            <input type="password" name="password" v-model="user.password" placeholder="Password" required />
+            <input class="login-input" type="text" name="username" v-model="user.username" placeholder="Username" required />
+            <input class="login-input" type="password" name="password" v-model="user.password" placeholder="Password" required />
             <button type="submit" class = 'btn' >Login</button>  
         </form>
-           <button><router-link :to="{ name: 'Register' }" class='btn'>Register</router-link></button>
+           <button><router-link :to="{ name: 'Register' }" class="register-button" >Register</router-link></button>
 
         <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
@@ -92,7 +92,8 @@ export default {
     font-size: 110%; 
 }
 #login{
-    margin-left:auto;
+    text-align:center;
+    margin-left: auto;
     margin-right: auto;
     padding: 20px 50px 20px 50px;
     width: 20%;
@@ -102,10 +103,29 @@ export default {
 .btn {
     border: .5px solid lightgrey;
     border-radius: 10px;
+    text-decoration:none;
 }
 #login button {
     border-radius: 10px;
     text-decoration: none;
     margin-top: 4px;
+}
+#login button:hover{
+    background-color: darkred;
+
+}
+.btn:visited{
+    color:black;
+    text-decoration: none;
+}
+.register-button{
+    text-decoration: none;
+}
+.register-button:visited{
+    color:black;
+}
+.login-input{
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>

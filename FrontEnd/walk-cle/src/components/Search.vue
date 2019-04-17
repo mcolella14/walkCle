@@ -1,7 +1,7 @@
 <template>
     <div id="search">
   
-        <h2>Search By Area</h2>
+        <!-- <h2>Search By Area</h2> -->
         <ul>
             <li :name="area" class="areaItem" @click="filterByArea(area)" :key="area" v-for="area in locationArea">
                 {{area}}
@@ -58,10 +58,11 @@ export default {
 
 <style>
 #search{
-    width: 20%;
+    width: 15%;
 }
 #selected{
     background: green;
+    border-radius:10px;
 
 }
 #notSelected{
@@ -70,24 +71,28 @@ export default {
 
 #search ul{
     list-style: none;
-    text-align: right;
+    text-align: right;  /*
     border: solid 2px white;
     width: 100%;
     padding: 5px;
     margin-right: 0px;
     border-radius: 3px;
-    background: white;
+    background: white;   */
 }
 #search li{
     padding: 2px 0 0 0;
-    color:black;
+    color:white;
+}
+
+.areaItem:hover{
+    text-align:left;
 }
 
 #search ul:hover{
     cursor: pointer;
 }
-h2{
+/* h2{
     text-align:left;
-}
+} */
 
 </style>

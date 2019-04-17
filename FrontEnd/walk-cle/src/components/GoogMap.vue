@@ -1,9 +1,8 @@
 <template>
   <div id="container">
     <!-- <h2 class="search" v-if="!isLogged">Log in to filter locations by area!</h2> -->
-   <search class ="search" v-if="isLogged" v-bind:area = "area" v-bind:locations = "locations"/>
-   
-   
+  <div class = "spacer-left" v-if="!isLogged"></div>
+  <search class ="search" v-if="isLogged" v-bind:area = "area" v-bind:locations = "locations"/>  
     <gmap-map id="map"
 
       :center="center"
@@ -24,6 +23,7 @@
         </gmap-info-window>
     </gmap-map>
     
+     <div class="spacer-right"></div>
 
   </div>
 </template>
@@ -171,6 +171,13 @@ export default {
 #infoBoxName{
   font-weight: bold;
   font-size: 150%;
+}
+
+.spacer-left{
+  width:20%;
+}
+.spacer-right{
+  width: 20%;
 }
 </style>
 

@@ -6,11 +6,11 @@
         </div>
         <ul class ="navList">
             <!--<li id="addLocation" v-if="showLogout"><router-link :to="{ name: 'AddLocation' }">Add Location</router-link></li>-->
-            <li id="profile" v-if="showLogout"><router-link v-bind:username="username" :to="{ name: 'Profile' }">{{this.username}}</router-link></li>
-            <li v-if="!showLogout"><router-link :to="{ name: 'Login' }">Login</router-link></li>
-            <li v-if="showLogout" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>
-            <li v-if="!showLogout"><router-link :to="{ name: 'Register' }">Register</router-link></li>
-            <li><router-link :to="{ name: 'Home' }">Home</router-link></li>
+            <li class ="nav-link" id="profile" v-if="showLogout"><router-link v-bind:username="username" :to="{ name: 'Profile' }">{{this.username}}</router-link></li>
+            <li class ="nav-link" v-if="!showLogout"><router-link :to="{ name: 'Login' }">Login</router-link></li>
+            <li class ="nav-link" v-if="showLogout" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>
+            <li class ="nav-link" v-if="!showLogout"><router-link :to="{ name: 'Register' }">Register</router-link></li>
+            <li class="nav-link" ><router-link :to="{ name: 'Home' }">Home</router-link></li>
         </ul>
         <sliding-nav id="silde-nav"/>
     </div>
@@ -124,12 +124,12 @@ export default {
   color: lime;
 }
 
-li{
+.nav-link{
     align-self: center;
     padding: 10px 5px 10px 5px;
 }
 
-li:hover{
+.nav-link:hover{
     text-align: center;
   background-color: white;
   color:#000;

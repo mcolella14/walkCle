@@ -2,9 +2,9 @@
 <div id="register">
     <h1>Register</h1>
     <form @submit.prevent="register">
-        <input type="text" name="username" v-model="user.username" placeholder="Username" required />
-        <input type="password" name="password" v-model="user.password" placeholder="Password" required />
-        <input type="password" name="password" v-model="user.confirmPassword" placeholder="Re-Enter Password" required />
+        <input class = "registration-input" type="text" name="username" v-model="user.username" placeholder="Username" required />
+        <input class = "registration-input" type="password" name="password" v-model="user.password" placeholder="Password" required />
+        <input class = "registration-input" type="password" name="password" v-model="user.confirmPassword" placeholder="Re-Enter Password" required />
         <button type="submit" class = 'btn' >Register</button>
     </form>
     <div class="alert alert-danger" role="alert" v-if="registrationErrors">
@@ -63,5 +63,9 @@ export default {
 .btn {
     border: .5px solid lightgrey;
     border-radius: 10px;
+}
+.registration-input{
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>

@@ -422,5 +422,14 @@ SET description = 'House of Blues IS the ultimate night out. It''s where great f
                         world''s best artists to our world-famous Gospel Brunch on Sundays, House of Blues is truly where music and food feed the soul.'
 WHERE location_name = 'House of Blues Cleveland';
 
+UPDATE location
+SET description = 'USS Cod is a Gato-class submarine, the only vessel of the United States Navy to be named for the cod, named after the world''s 
+                        most important food fish of the North Atlantic and North Pacific. Her keel was laid down by the Electric Boat Company of 
+                        Groton, Connecticut on 21 July 1942.'
+WHERE location_name = 'USS Cod Submarine Memorial';                        
+
+UPDATE location 
+SET description = 'Home of Cleveland''s finest hand-crafted soups, stocks, and broths.'
+WHERE description = 'Home of Cleveland''s finest hand-crafted soups, stocks, adn broths.';
 
                                                                         

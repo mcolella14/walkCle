@@ -100,7 +100,7 @@ export default {
 #info {
   background-color: darkred;
   border: 1px solid black;
-  opacity: .9;
+  opacity: .7;
   width: 75%;
   margin-left: auto;
   margin-right: auto;

@@ -1,7 +1,7 @@
 <template>
 <div id ="directions">
     <directions/>
-    <h1>directions</h1>
+    
 </div>
 </template>
 

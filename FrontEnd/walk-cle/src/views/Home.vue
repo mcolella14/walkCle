@@ -110,6 +110,7 @@ export default {
   width: 65%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 10%;
 }
 
 #about-login{

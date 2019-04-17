@@ -66,7 +66,7 @@ export default {
   background-image: url('assets/cleveland-skyline-at-night-2x3-magnet.jpg');
   background-attachment:fixed;
   background-color: aquamarine;
-  height: 1000px;
+ 
   width: 100vw;
 }
 

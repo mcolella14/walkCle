@@ -2,7 +2,7 @@
 <div id="nav">
     <div class="navBar">
         <div class="header">
-            <h1>WalkCLE</h1>
+            <h1>WalkCLE&#8482;</h1>
         </div>
         <ul class ="navList">
             <!--<li id="addLocation" v-if="showLogout"><router-link :to="{ name: 'AddLocation' }">Add Location</router-link></li>-->

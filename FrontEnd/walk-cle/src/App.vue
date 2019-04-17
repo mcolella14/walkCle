@@ -2,6 +2,7 @@
   <div id="app">
     <Nav/>
     <router-view :locations="locations" :isLogged="isLogged" />
+    <div id="footer">&copy; 2019 Lex Matt Chris Tom -- All Rights Reserved</div>
   </div>
 </template>
 
@@ -66,8 +67,10 @@ export default {
   background-image: url('assets/cleveland-skyline-at-night-2x3-magnet.jpg');
   background-attachment:fixed;
   background-color: aquamarine;
- 
-  width: 100vw;
+  
+}
+#footer{
+  color:white;
 }
 
 input {

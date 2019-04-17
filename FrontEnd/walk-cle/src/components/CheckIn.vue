@@ -11,7 +11,7 @@
                         :key="$index">{{location.name}}
                 </option>
             </select>
-            <input type="button" @click="checkIn()" value="Check In">
+            <input class="checkin-button" type="button" @click="checkIn()" value="Check In">
             
         
         </div>
@@ -84,5 +84,12 @@ input:hover{
 
 #success{
     color: lime;
+}
+.checkin-button{
+    margin-left: auto;
+    margin-right: auto;
+}
+.checkin-button:hover{
+    background-color: darkred;
 }
 </style>

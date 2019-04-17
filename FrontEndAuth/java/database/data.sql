@@ -372,3 +372,55 @@ WHERE location_name = 'Soldiers and Sailors Monument';
 UPDATE location
 SET lat = 41.479836, lng = -81.71396829999999
 WHERE location_name = 'Platform Beer Co.';
+
+UPDATE location
+SET description = 'Progressive Field is a baseball park located in the downtown area of Cleveland, Ohio, United States. 
+                        It is the home field of the Cleveland Indians of Major League Baseball and, together with Rocket Mortgage Field House, 
+                        is part of the Gateway Sports and Entertainment Complex.'
+WHERE description = 'Progressive Field is a baseball park located in the downtown area of Cleveland, Ohio, United States. 
+                        It is the home field of the Cleveland Indians of Major League Baseball and, together with Rocket Morgage Field House, 
+                        is part of the Gateway Sports and Entertainment Complex.'; 
+
+UPDATE location
+SET description = 'Jacobs Pavilion is an open-air amphitheater located on the west bank of The Flats in Cleveland, Ohio. 
+                        The venue is part of the Nautica Entertainment Complex, owned by Jacobs Entertainment.' 
+WHERE location_name = 'Jacobs Pavilion at Nautica';
+
+UPDATE location
+SET description = 'The Agora Theatre and Ballroom is a music venue located in Cleveland, Ohio, founded by Henry "Hank" LoConti Sr. The Agora name was previously used by two other Cleveland venues in succession, the latter of which was damaged by fire in 1984.'
+WHERE location_name =  'Agora Theater & Ballroom';    
+
+UPDATE location
+SET area = 'Midtown'
+WHERE location_name = 'Agora Theater & Ballroom';
+
+UPDATE location
+SET description = 'The Cuyahoga County Soldiers and Sailors'' Monument is a monument to Civil War soldiers and sailors from Cuyahoga County, Ohio. Located in the southeast quadrant of Public Square in downtown Cleveland, it opened July 4, 1894. It was designed by architect Levi Scofield, who also created the monument''s sculptures.'
+WHERE location_name = 'Cleveland Soldiers and Sailors Monument';
+
+UPDATE location
+SET description = 'Tour this restored 618-foot historic ship and see what life was like on board a working Great Lakes freighter. Explore the 1925-built Mather from stem to stern and see its huge cargo holds, brass and oak pilot house, elegant guest quarters and four-story engine room. Walk the decks and marvel at the “engineering firsts” 
+                        that helped transform Northeast Ohio into a great industrial center. Experience the golden era of steamships on one of the best.'  
+WHERE location_name = 'Steamship William G. Mather Museum';
+
+UPDATE location
+SET description = 'The West Side Market is the oldest operating indoor/outdoor market space in Cleveland, Ohio. It is located at the corner of West 25th Street and Lorain Avenue in the Ohio City neighborhood. 
+                        On December 18, 1973, it was added to the National Register of Historic Places.'
+WHERE location_name = 'West Side Market';
+
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('Soupermarket Cleveland', 'Midtown', 'Bar/Rest', 'ChIJDXb39KX7MIgRtzc5WsfkSeU', 41.50026037010727, -81.63788077989273, 'Home of Cleveland''s finest hand-crafted soups, stocks, adn broths.');
+   
+UPDATE location
+SET location_name = 'SouperMarket Cleveland'   
+WHERE location_name = 'Soupermarket Cleveland';     
+
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('Gust Gallucci''s Italian Foods & Market', 'Midtown', 'Bar/Rest', 'ChIJnxQ6q637MIgRUwr6C6FZzKg', 41.5037733, -81.64393299999999, 'Cleveland''s source for Italian meats and cheeses, pasta, olives and olive oil, spices, fine wines and other ethnic foods.');
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('The Cleveland Bagel Company', 'Midtown', 'Bar/Rest', 'ChIJ73I510PwMIgR0mBi7EbVyk0', 41.501713, -81.635416, 'Hand-rolled bagels are served with a variety of inventive cream cheese in casual, modern surrounds.');
+
+UPDATE location
+SET description = 'House of Blues IS the ultimate night out. It''s where great food sets the stage for amazing live concerts. From VIP experiences with the 
+                        world''s best artists to our world-famous Gospel Brunch on Sundays, House of Blues is truly where music and food feed the soul.'
+WHERE location_name = 'House of Blues Cleveland';
+
+
+                                                                        

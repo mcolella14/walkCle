@@ -432,4 +432,35 @@ UPDATE location
 SET description = 'Home of Cleveland''s finest hand-crafted soups, stocks, and broths.'
 WHERE description = 'Home of Cleveland''s finest hand-crafted soups, stocks, adn broths.';
 
-                                                                        
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('Tech Elevator', 'Midtown', 'Landmark', 'ChIJU4WNAq_7MIgRuEgwoiQh2Mk', 41.5038148, -81.6386917, 'Tech Elevator is an intensive in-person education provider helping individuals and companies acquire in-demand technology skills for the modern workforce.
+                        Through our 14-week, full-time coding bootcamps, we teach students from diverse backgrounds to become software developers 
+                        while also helping them to build necessary career-readiness skills and career connections through our nationally 
+                        recognized Pathway Program™.');
+
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('Euclid Beach Cleveland Script Sign', 'Waterloo Arts District', 'Landmark', 'ChIJxTs7BbnxMIgRDaAq0S0A6FU',41.5838318 ,-81.5688907 , 'The fourth Cleveland script sign is the farthest east 
+                        and offers a west-facing view of the city skyline. Located in Euclid Beach Park, the sign offers both a picturesque look at 
+                        Lake Erie and Euclid Beach. With clear blue skies, mid-morning and early afternoon photos will be the hit of your Instagram feed. 
+                        But, a group photo before an evening of fun at Euclid Beach LIVE works just as well.');
+                         
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('Tremont Cleveland Script Sign', 'Tremont', 'Landmark', 'ChIJgTYBxnXwMIgRZjditvKIIEA', 41.4845855, -81.6930842, 'The Tremont neighborhood sign 
+                        features a backdrop of the majestic Innerbelt and Shoreway bridges, as well as a wide view of the tallest structures in the city 
+                        like Terminal Tower and Key Tower. At night, some visitors like to add some bang to their shots by taking photos when the 
+                        Indians have a fireworks show at Progressive Field. Spend a day (or night) in Tremont, which boasts an even mix of indie art 
+                        galleries, cool boutiques and amazing culinary experiences.');
+                        
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('Edgewater Park Cleveland Script Sign', 'Edgewater', 'Landmark', 'ChIJxTs7BbnxMIgRDaAq0S0A6FU', 41.4875324, -81.7492465, 'The script sign at Edgewater Park 
+                        welcomes its visitors before they even make their way down to the beach area. Depending on the season, there are usually a lot 
+                        of things happening at the park - from the popular Edgewater LIVE series to the Light Up the Lake fireworks show. This spot is 
+                        popular for early sunrise photos, and great for anyone who wants a picture that combines the city and Lake Erie.');
+                        
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('North Coast Harbor Cleveland Script Sign', 'Downtown', 'Landmark', 'ChIJlZ6RsITwMIgR7lPkPFMVvSo', 41.5099419, -81.69685319999999, 'The third of the original 
+                        signs finds itself behind the Rock & Roll Hall of Fame and within close proximity to the Great Lakes Science Center and the 
+                        Goodtime III. The Rock Hall, Terminal Tower and the new Hilton Downtown Cleveland make a perfect backdrop during a sunset photo at 
+                        the script sign. It offers a glittering, south-facing cityscape shot.');
+
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('The Foundry Cleveland Sign', 'The Flats', 'Landmark', 'ChIJNa8_aXDwMIgRsDgqC1H0wks', 41.4895647, -81.70033029999999, 'The sixth script sign, which was installed 
+                        in August of 2018, is located at the uber-unique location of The Foundry, located on the Flats West Bank. This location offers an 
+                        incredibly special cityscape view from the Cuyahoga River. If you''re lucky, you might just capture a huge Lake Erie freighter in 
+                        the background. Better still, make a stop inside The Foundry, a rowing and sailing center, to take fitness classes and lessons.');
+
+                                                                                            

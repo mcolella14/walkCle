@@ -209,7 +209,7 @@ h3{
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
-    opacity: 0.5;
+    opacity: 0.4;
 }
 #profile{
     display: flex;

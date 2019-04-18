@@ -1,8 +1,9 @@
 <template>
     <div id="search">
-  
-        <!-- <h2>Search By Area</h2> -->
+    <div style="font-weight: bolder; font-size: 120%;">Search by area</div>
+
         <ul>
+            <li :name="''" :class="areaItem" @click="filterByArea('')">All Locations</li>
             <li :name="area" class="areaItem" @click="filterByArea(area)" :key="area" v-for="area in locationArea">
                 {{area}}
             </li>
@@ -34,6 +35,9 @@ export default {
     methods: {
         selectArea(area){
             this.currentArea = area;
+            document.getElementsByName('').forEach(element => {
+                element.setAttribute("id", "notSelected")
+            });
             let areas = document.getElementsByClassName('areaItem')
              Array.from(areas).forEach(element => {
                  element.setAttribute("id", "notSelected")
@@ -80,7 +84,7 @@ export default {
     background: white;   */
 }
 #search li{
-    padding: 2px 0 0 0;
+    padding: 10px;
     color:white;
 }
 

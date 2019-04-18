@@ -76,6 +76,7 @@ export default {
 #nav{
 background-image: linear-gradient(#da0000, #8b0101);
 box-shadow: 0 0 50px black;
+transition:0.5s;
 }
 
 #boxShadow:hover{

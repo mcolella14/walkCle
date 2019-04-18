@@ -6,6 +6,8 @@
       <b>Start:</b>
       <select id="start">
         <option value="7100 Euclid Ave #140, Cleveland, OH 44103">Tech Elevator</option>
+        <option/>
+         <option v-for="(location, $index) in locations" v-bind:value="location.name" :key="$index">{{location.name}}</option>
       </select>
       <b>End:</b>
       <select id="end">

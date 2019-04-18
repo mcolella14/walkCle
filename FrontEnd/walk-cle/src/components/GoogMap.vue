@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <!-- <h2 class="search" v-if="!isLogged">Log in to filter locations by area!</h2> -->
-  <div class = "spacer-left" v-if="!isLogged" id="hide">Log in to search by area</div>
+  <div class = "spacer-left" v-if="!isLogged">Log in to search by area</div>
   <search class ="search" v-if="isLogged" v-bind:area = "area" v-bind:locations = "locations"/>  
     <gmap-map id="map"
 

@@ -3,7 +3,6 @@
     <h1 class="title">WalkCLE&#8482;</h1>
     <goog-map v-bind:isLogged="isLogged" id="map"/>
     <about id="about"/>
-    <search id="search"/>
     <div v-if="!isLogged" id="hide">
     <div id="info" v-on:click="isLogged">
       <h1>WalkCLE&#8482;</h1>
@@ -16,8 +15,7 @@
         or simply <router-link id = "about-login" :to="{ name: 'Login' }">Login</router-link> 
         to unlock ablility to filter area or even by activity then tab on over directions, drop in your 
         next stop and away you go! After you arrive make sure to check in your location. 
-        Check in to enough spots around Cleveland to unlock your WalkCLE badges. 
-        .....(next features added).......</p> 
+        Check in to enough spots around Cleveland to unlock your WalkCLE badges.</p> 
     </div>
     </div>
   </div>
@@ -26,7 +24,7 @@
 <script>
 import GoogMap from "@/components/GoogMap.vue";
 import About from "@/components/About.vue";
-import Search from "@/components/Search.vue";
+
 
 
 
@@ -45,7 +43,6 @@ export default {
   components: {
     GoogMap,
     About,
-    Search,
     
 
   },

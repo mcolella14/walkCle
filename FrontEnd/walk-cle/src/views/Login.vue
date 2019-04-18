@@ -7,8 +7,10 @@
             <input class="login-input" type="password" name="password" v-model="user.password" placeholder="Password" required />
             <button type="submit" class = 'btn' >Login</button>  
         </form>
+        <div style="padding-top: 20px">
+            <div style="padding-bottom: 10px">Don't have an account?</div> 
            <button><router-link :to="{ name: 'Register' }" class="register-button" >Register</router-link></button>
-
+        </div>
         <div class="alert alert-danger" role="alert" v-if="invalidCredentials">
         Invalid username and password!
         </div>

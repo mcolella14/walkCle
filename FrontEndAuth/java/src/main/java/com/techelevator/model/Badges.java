@@ -3,6 +3,15 @@ package com.techelevator.model;
 public class Badges {
 	private boolean defenderBadge;
 	private boolean bottomsUpBadge;
+	private boolean elevateBadge;
+
+	public boolean isElevateBadge() {
+		return elevateBadge;
+	}
+
+	public void setElevateBadge(boolean elevateBadge) {
+		this.elevateBadge = elevateBadge;
+	}
 
 	public boolean isBottomsUpBadge() {
 		return bottomsUpBadge;

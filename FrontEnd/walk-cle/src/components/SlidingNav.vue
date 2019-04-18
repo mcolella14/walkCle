@@ -25,6 +25,7 @@
     <router-link id="router" :to="{ name: 'Home' }">Home</router-link>
     <router-link id="router" :to="{ name: 'CheckInView' }">Check In</router-link>
     <router-link id="router" :to="{ name: 'DirectionsView' }">Directions</router-link>
+    <div @click="shadow" id="box">More dramatic box shadow</div>
   </div>
 </div>
 
@@ -39,7 +40,8 @@ export default {
     data(){
         return{
             showLogout: false,
-            username: ''
+            username: '',
+            boxShadowFactor: 0
         }
     },
     mounted(){
@@ -83,6 +85,11 @@ export default {
         closeSlideMenu(){   // add some sort of functionality using ElementById('something').addClass('hidden') and 'visable'
             document.getElementById('side-menu').style.width = '0';
             document.getElementById('main').style.marginLeft = '0';
+        },
+        shadow(){
+            this.boxShadowFactor++;
+            document.getElementById('side-menu').style = "box-shadow: -"+ (this.boxShadowFactor*this.boxShadowFactor)+ "px 0 50px black";
+            this.openSlideMenu();
         }  
 
     }
@@ -95,6 +102,9 @@ export default {
 <style>
 #slide{
   color: black;
+}
+#box:hover{
+  cursor: pointer;
 }
 
 #link a:visited{
@@ -148,7 +158,7 @@ body{
   top:0;
   right:0;
   background-color:white;
-  box-shadow: 0 0 100px black;
+  box-shadow: 0 0 50px black;
   overflow-x:hidden;
   padding-top:60px;
   transition:0.5s;

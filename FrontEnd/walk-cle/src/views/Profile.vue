@@ -36,6 +36,18 @@
                     </div>
                     <img id="beerPic" src="@/assets/beer.jpg"/>
                 </div>
+                <div id="elevate">
+                    <div>
+                        <div>Elevate Yourself!</div>
+                        <div v-if="badges.bottomsUpBadge" class="have">
+                            You do not yet trust in the process!
+                        </div>
+                        <div v-if="!badges.bottomsUpBadge" class="notHave">
+                            Trust in the process to earn this badge!
+                        </div>
+                    </div>
+                    <img id="teLogoPic" src="@/assets/teLogo.png"/>
+                </div>
         </div>
     </div>
 </template>
@@ -50,7 +62,8 @@ export default {
             checkedInLocations: [],
             badges:{ 
                 defenderBadge: false,
-                bottomsUpBadge: false
+                bottomsUpBadge: false,
+                elevateBadge: false,
             }
         }
     },
@@ -85,7 +98,14 @@ export default {
             document.getElementById('bottomsUp').className = "earnedBadge"; 
         }
         else {document.getElementById('bottomsUp').className = "notEarnedBadge";}
+
+        if(this.badges.elevateBadge){
+            document.getElementById('elevate').className = "earnedBadge"; 
         }
+        else {document.getElementById('elevate').className = "notEarnedBadge";}
+        }
+
+        
     }
 
 
@@ -100,6 +120,9 @@ export default {
 <style scoped>
 #profile{
     color: Black;
+}
+ul{
+    list-style:none;
 }
 h3{
     color: white;
@@ -152,6 +175,11 @@ h3{
     height: auto;
     border-radius: 100%;
 }
+#teLogoPic{
+    width: 60%;
+    height: auto;
+    border-radius: 100%;
+}
 .notEarnedBadge{
     height: 20%;
     background: white;
@@ -170,6 +198,11 @@ h3{
     justify-content: space-between;
 }
 #bottomsUp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#elevate{
     display: flex;
     align-items: center;
     justify-content: space-between;

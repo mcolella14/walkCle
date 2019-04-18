@@ -11,6 +11,7 @@
             <li class ="nav-link" v-if="showLogout" v-on:click="logout"><router-link :to="{ name: 'Home' }">Logout</router-link></li>
             <li class ="nav-link" v-if="!showLogout"><router-link :to="{ name: 'Register' }">Register</router-link></li>
             <li class="nav-link" ><router-link :to="{ name: 'Home' }">Home</router-link></li>
+            <li id="boxShadow" class="nav-link" @click="shadow">More dramatic box shadow</li>
         </ul>
         <sliding-nav id="silde-nav"/>
     </div>
@@ -28,7 +29,8 @@ export default {
     data(){
         return{
             showLogout: false,
-            username: ''
+            username: '',
+            boxShadowFactor: 0
         }
     },
     mounted(){
@@ -60,6 +62,10 @@ export default {
              this.showLogout = this.isLogged();
              EventBus.$emit('logout');
              location.reload();
+        },
+        shadow(){
+            this.boxShadowFactor++;
+            document.getElementById('nav').style = "box-shadow: 0 " + this.boxShadowFactor*this.boxShadowFactor + "px 50px white"
         }
     }
 
@@ -67,6 +73,19 @@ export default {
 </script>
 
 <style>
+#nav{
+background-image: linear-gradient(#da0000, #8b0101);
+box-shadow: 0 0 50px white;
+}
+
+#boxShadow:hover{
+    cursor: pointer;
+}
+
+a#home_button:hover {
+/* color: #ffffff; */
+border-color: #ffffff;
+}
 #nav {
   padding: 30px;
   color: white;

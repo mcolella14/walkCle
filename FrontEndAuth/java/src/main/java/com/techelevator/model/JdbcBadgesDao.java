@@ -66,7 +66,24 @@ public class JdbcBadgesDao implements BadgesDao {
 		} else {
 			badges.setElevateBadge(false);
 		}
-		System.out.println(elevateLocationCount);
+		
+		int nextYearLocationCount = 0;
+		String sqlNextYearLocationsCount = "SELECT count(*) as total FROM users_location ul JOIN users u ON u.id = ul.id JOIN location l ON ul.location_name = l.location_name WHERE u.username = ? AND l.category = 'Sports'";
+		SqlRowSet nextYearResults = jdbcTemplate.queryForRowSet(sqlNextYearLocationsCount, username);
+		while (nextYearResults.next()) {
+			nextYearLocationCount = nextYearResults.getInt("total");
+		}
+		int sportsLocationCount = 0;
+		String sqlSportsLocationCount = "SELECT count(*) as total FROM location WHERE category = 'Sports'";
+		SqlRowSet sportsResults = jdbcTemplate.queryForRowSet(sqlSportsLocationCount);
+		while (sportsResults.next()) {
+			sportsLocationCount = sportsResults.getInt("total");
+		}
+		if (nextYearLocationCount == sportsLocationCount) {
+			badges.setNextYearBadge(true);
+		} else {
+			badges.setNextYearBadge(false);
+		}
 		return badges;
 
 	}

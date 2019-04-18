@@ -65,7 +65,7 @@ export default {
         },
         shadow(){
             this.boxShadowFactor++;
-            document.getElementById('nav').style = "box-shadow: 0 " + this.boxShadowFactor*this.boxShadowFactor + "px 50px white"
+            document.getElementById('nav').style = "box-shadow: 0 " + this.boxShadowFactor*this.boxShadowFactor + "px 50px black"
         }
     }
 
@@ -75,7 +75,7 @@ export default {
 <style>
 #nav{
 background-image: linear-gradient(#da0000, #8b0101);
-box-shadow: 0 0 50px white;
+box-shadow: 0 0 50px black;
 }
 
 #boxShadow:hover{

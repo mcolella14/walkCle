@@ -4,6 +4,15 @@ public class Badges {
 	private boolean defenderBadge;
 	private boolean bottomsUpBadge;
 	private boolean elevateBadge;
+	private boolean nextYearBadge;
+
+	public boolean isNextYearBadge() {
+		return nextYearBadge;
+	}
+
+	public void setNextYearBadge(boolean nextYearBadge) {
+		this.nextYearBadge = nextYearBadge;
+	}
 
 	public boolean isElevateBadge() {
 		return elevateBadge;

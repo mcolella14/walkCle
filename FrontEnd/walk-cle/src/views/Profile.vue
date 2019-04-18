@@ -16,10 +16,10 @@
                     <div>
                         <div>Defender of the Land</div>
                         <div v-if="badges.defenderBadge" class="have">
-                            You have visited all locations!
+                            You have visited all locations
                         </div>
                         <div v-if="!badges.defenderBadge" class="notHave">
-                            Visit all locations to earn this badge!
+                            Visit all locations to earn this badge
                         </div>
                     </div>
                     <img id="defenderPic" src="@/assets/defender.jpg"/>
@@ -28,10 +28,10 @@
                     <div>
                         <div>Bottoms Up!</div>
                         <div v-if="badges.bottomsUpBadge" class="have">
-                            You have visited 5 bars!
+                            You have visited 5 bars
                         </div>
                         <div v-if="!badges.bottomsUpBadge" class="notHave">
-                            Visit at least 5 bars to earn this badge!
+                            Visit at least 5 bars to earn this badge
                         </div>
                     </div>
                     <img id="beerPic" src="@/assets/beer.jpg"/>
@@ -40,13 +40,25 @@
                     <div>
                         <div>Elevate Yourself!</div>
                         <div v-if="badges.bottomsUpBadge" class="have">
-                            You do not yet trust in the process!
+                            You do not yet trust in the process
                         </div>
                         <div v-if="!badges.bottomsUpBadge" class="notHave">
-                            Trust in the process to earn this badge!
+                            Trust in the process to earn this badge
                         </div>
                     </div>
                     <img id="teLogoPic" src="@/assets/teLogo.png"/>
+                </div>
+                <div id="nextYear">
+                    <div>
+                        <div>There's Always Next Year</div>
+                        <div v-if="badges.nextYearBadge" class="have">
+                            You have visited all sports locations
+                        </div>
+                        <div v-if="!badges.nextyearBadge" class="notHave">
+                            Visit all sports locations to earn this badge
+                        </div>
+                    </div>
+                    <img id="nextYearPic" src="@/assets/clevelandSports.jpg"/>
                 </div>
         </div>
     </div>
@@ -64,6 +76,7 @@ export default {
                 defenderBadge: false,
                 bottomsUpBadge: false,
                 elevateBadge: false,
+                nextYearBadge: false
             }
         }
     },
@@ -103,6 +116,11 @@ export default {
             document.getElementById('elevate').className = "earnedBadge"; 
         }
         else {document.getElementById('elevate').className = "notEarnedBadge";}
+
+        if(this.badges.nextYearBadge){
+            document.getElementById('nextYear').className = "earnedBadge"; 
+        }
+        else {document.getElementById('nextYear').className = "notEarnedBadge";}
         }
 
         
@@ -180,6 +198,11 @@ h3{
     height: auto;
     border-radius: 100%;
 }
+#nextYearPic{
+    width: 60%;
+    height: auto;
+    border-radius: 100%;
+}
 .notEarnedBadge{
     height: 20%;
     background: white;
@@ -203,6 +226,11 @@ h3{
     justify-content: space-between;
 }
 #elevate{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#nextYear{
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -19,8 +19,9 @@
        </gmap-marker>
        
       <gmap-info-window @click="showInfo" :position="infoWindow" :opened="windowOpen" @closeclick="closeWindow()"> 
-          <div id="info"><div id="infoBoxName">{{this.infoName}}</div></div>
-        </gmap-info-window>
+          <div id="info"><div id="infoBoxName">{{this.infoName}}</div></div><router-link class="btn" id="router" :to="{ name: 'CheckInView' }"> &#10003;Check In</router-link>
+          <modal/>
+         </gmap-info-window>
     </gmap-map>
     
      <div class="spacer-right"></div>
@@ -33,7 +34,10 @@
 import axios from 'axios';
 import { EventBus } from '@/event-bus.js';
 import Search from '@/components/Search.vue';
-import Modal from '@melmacaluso/vue-modal';
+// import Modal from '@melmacaluso/vue-modal';
+import Modal from '@/components/Modal.vue';
+import About from '@/components/About.vue';
+
 export default {
 
   name: "Googmap",
@@ -49,10 +53,13 @@ export default {
       locations:[],
       infoName: '',
       area: '',
+       
     };
+
   },
   components: {
-    Search
+    Search,
+    Modal
   },
   computed:{
     filteredLocations : function(){
@@ -79,6 +86,24 @@ export default {
   },
 
   methods: {
+           checkIn(){
+            fetch(`${process.env.VUE_APP_REMOTE_API}/checkIn`, {
+                method: 'POST',
+                headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(this.checkedInLocation),
+            })
+            .then( ()=>{
+                 console.log('Posted!');
+                document.getElementById('success').innerText = 'You have successfully checked in to ' + this.checkedInLocation.locationName
+                })
+            .catch( error =>{
+                document.getElementById('failure').innerText = 'You are unable to check in to ' + this.checkedInLocation.locationName
+
+    })
+    },
     showInfo(){
       
 
@@ -171,6 +196,9 @@ export default {
 #infoBoxName{
   font-weight: bold;
   font-size: 150%;
+  background:white;
+  color: brown;
+  border-radius: 50%;
 }
 
 .spacer-left{
@@ -178,6 +206,9 @@ export default {
 }
 .spacer-right{
   width: 20%;
+}
+#router{
+  text-decoration: none;
 }
 </style>
 

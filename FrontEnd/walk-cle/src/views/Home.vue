@@ -29,6 +29,7 @@ import About from "@/components/About.vue";
 import Search from "@/components/Search.vue";
 
 
+
 export default {
 
   props: ['isLogged', 'locations'],

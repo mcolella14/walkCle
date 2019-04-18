@@ -39,10 +39,10 @@
                 <div id="elevate">
                     <div>
                         <div>Elevate Yourself!</div>
-                        <div v-if="badges.bottomsUpBadge" class="have">
+                        <div v-if="badges.elevateBadge" class="have">
                             You do not yet trust in the process
                         </div>
-                        <div v-if="!badges.bottomsUpBadge" class="notHave">
+                        <div v-if="!badges.elevateBadge" class="notHave">
                             Trust in the process to earn this badge
                         </div>
                     </div>

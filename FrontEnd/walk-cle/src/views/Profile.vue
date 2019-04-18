@@ -40,7 +40,7 @@
                     <div>
                         <div>Elevate Yourself!</div>
                         <div v-if="badges.elevateBadge" class="have">
-                            You do not yet trust in the process
+                            You trust in the process
                         </div>
                         <div v-if="!badges.elevateBadge" class="notHave">
                             Trust in the process to earn this badge
@@ -54,7 +54,7 @@
                         <div v-if="badges.nextYearBadge" class="have">
                             You have visited all sports locations
                         </div>
-                        <div v-if="!badges.nextyearBadge" class="notHave">
+                        <div v-if="!badges.nextYearBadge" class="notHave">
                             Visit all sports locations to earn this badge
                         </div>
                     </div>

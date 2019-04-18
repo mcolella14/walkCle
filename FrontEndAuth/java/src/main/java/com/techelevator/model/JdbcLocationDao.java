@@ -33,7 +33,7 @@ public class JdbcLocationDao implements LocationDao{
 	 @Override
 	    public List<Location> getAllLocations() {
 	        List<Location> locations = new ArrayList<Location>();
-	        String sqlSelectAllLocations = "SELECT *  FROM location";
+	        String sqlSelectAllLocations = "SELECT *  FROM location ORDER BY location_name";
 	        SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllLocations);
 
 	        while(results.next()) {

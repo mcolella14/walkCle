@@ -463,4 +463,81 @@ INSERT INTO location (location_name, area, category, place_id, lat, lng, descrip
                         incredibly special cityscape view from the Cuyahoga River. If you''re lucky, you might just capture a huge Lake Erie freighter in 
                         the background. Better still, make a stop inside The Foundry, a rowing and sailing center, to take fitness classes and lessons.');
 
-                                                                                            
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('Edgewater Park', 'Edgewater', 'Park', 'ChIJpyxLMLPxMIgRQbsFyGITT6M', 41.4902896, -81.73545519999999, 'The 147
+                         acre Edgewater Park is the westernmost park in Cleveland Metroparks Lakefront Reservation. Edgewater Park features 9000 feet of 
+                         shoreline, dog and swim beaches, boat ramps, fishing pier, picnic areas and grills and a rentable pavilion.');                                                                                            
+
+INSERT INTO location (location_name, area, category, place_id, lat, lng, description) VALUES ('Cleveland Masonic', 'Midtown', 'Entertainment', 'ChIJFYYI6lv6MIgRSSlAE6mYkjE', 41.50406599999999, -81.66241900000001, 'The Masonic 
+                        Temple Auditorium was completed in 1921 and originally housed the Cleveland Orchestra for many years. Due to its renowned acoustics
+                        the venue has been home to various performing arts productions and live music events over the years. More recently a variety of 
+                        national touring acts, comedians and rising stars have performed such as MGMT, Bastille, Fitz and the Tantrums, The 1975, Pixies, 
+                        Kirk Franklin, Joe Rogan, Ghost, Leon Bridges and Sturgill Simpson.');  
+
+UPDATE location
+SET description = 'The Arcade in downtown Cleveland, Ohio, is a Victorian-era structure of two nine-story buildings, joined by a five-story arcade with a 
+                        glass skylight spanning over 300 feet, along the four balconies.'
+WHERE location_name = 'The Arcade Cleveland';
+
+UPDATE location
+SET description = 'The Fountain of Eternal Life, also known as the War Memorial Fountain and Peace Arising from the Flames of War, is a 
+                        statue and fountain in downtown Cleveland, Ohio designed by Cleveland Institute of Art graduate Marshall Fredericks and 
+                        dedicated on May 30, 1964.'
+WHERE location_name = 'Fountain Of Eternal Life';   
+
+UPDATE location
+SET description = 'Two Irish brothers with limited brewing experience. A city that shuttered its last production brewery in the early 80s.
+                        A neighborhood in serious need of a facelift. In 1986 when Patrick and Daniel Conway opened their fledgling operation in Cleveland''s 
+                        Ohio City neighborhood, the odds were stacked against them. Fortunately, they surrounded themselves with a staff of passionate, 
+                        knowledgeable people, and from the start committed themselves to bringing a sophisticated, diverse selection of craft beer to their 
+                        home state. Two decades, multiple awards, and a whole lot of stories later, Pat and Dan Conway celebrate over two decades of 
+                        brewing exceptional beer for their adventurous and discerning customers.'
+WHERE location_name = 'Great Lakes Brewing Company';
+
+UPDATE location
+SET description = 'Lola is the crown jewel of Cleveland''s vibrant culinary scene. Chef Michael Symon''s inventive and creative menu offers diners the 
+                        opportunity to experience a modern spin on their favorite dishes, while always showcasing the best of what local purveyors are 
+                        producing just miles away. The sleek and elegant space is the perfect backdrop to your culinary adventure of award-winning cuisine.'
+WHERE location_name = 'Lola Bistro';  
+
+UPDATE location
+SET description = 'Playhouse Square is a theater district in downtown Cleveland, Ohio, USA. It is the largest performing arts center in the United States 
+                        outside of New York. Constructed in a span of 19 months in the early 1920s, the theaters were subsequently closed down, but were 
+                        revived through a grassroots effort.'
+WHERE location_name = 'Playhouse Square';
+
+UPDATE location
+SET description = 'German microbrewery with an on-site restaurant & beer garden offering traditional eats & live music.'
+WHERE location_name = 'Hofbräuhaus Cleveland';
+
+UPDATE location
+SET description = 'Tower City Center, originally known as Cleveland Union Terminal, is a large mixed-use facility located on Public Square in 
+                        downtown Cleveland, Ohio.'
+WHERE location_name = 'Tower City Center';
+
+UPDATE location
+SET description = 'Hilarities Comedy Hall, which opened in 1986, has been credited with pioneering the revival of Cleveland’s Warehouse District. 
+                        Hilarities was a downtown destination for Clevelanders for nearly twelve years, drawing nearly 130,000 visitors annually, a number 
+                        which exceeded that of even the Cleveland Ballet. Over the course of history, Hilarities succeeded in bringing attention not 
+                        only to itself but to its neighborhood and the city of Cleveland. Hilarities served up a host of now nationally prominent talent 
+                        such as Tim Allen, Paul Reiser, Sinbad, Kevin Pollak and Louie Anderson to name a few, as well as having spawned from its amateur 
+                        ranks Clevelanders who have gone on to national prominence.'
+WHERE location_name = 'Hilarities';
+
+UPDATE location
+SET description = 'Severance Hall is a concert hall located in the University Circle neighborhood of Cleveland, Ohio. Named after patrons John L. and 
+                        his sister Elisabeth Severance Allen Prentiss, the hall has been the home of the Cleveland Orchestra since its opening on February 
+                        5, 1931.'
+WHERE location_name = 'Severance Hall';
+
+UPDATE location
+SET description = 'The Greater Cleveland Aquarium is an aquarium in Cleveland, Ohio, USA. Occupying the historic FirstEnergy Powerhouse building located 
+                        on the west bank of the Cuyahoga River in the city''s Flats district, the aquarium which opened in January 2012 consists of 
+                        approximately 70,000 square feet of exhibition space and features exhibits representing both local and exotic species 
+                        of fish. The facility is the only free standing aquarium in the state of Ohio and ends a 26-year period that the city lacked a 
+                        public aquarium.'
+WHERE location_name = 'Greater Cleveland Aquarium';
+
+UPDATE location
+SET description = 'Jack Cleveland Casino is a casino in downtown Cleveland, Ohio, owned and operated by Jack Entertainment.'
+WHERE location_name = 'JACK Cleveland Casino';
+                                                                  

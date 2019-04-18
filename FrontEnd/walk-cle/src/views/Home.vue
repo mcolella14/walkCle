@@ -104,7 +104,7 @@ export default {
 }
 
 #info {
-  background-color: darkred;
+  background-color: #001244;
   border: 1px solid black;
   opacity: .85;
   width: 65%;
@@ -114,7 +114,7 @@ export default {
 }
 
 #about-login{
-  color:blue;
+  color:red;
   text-decoration: none;
 }
 
@@ -125,7 +125,7 @@ export default {
 }
 
 #about-register{
-  color:blue;
+  color:red;
   text-decoration: none;
 }
 
